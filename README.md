@@ -7,6 +7,7 @@ The setups steps expect following tools installed on the system.
 - Github
 - Ruby [2.7.1]
 - Rails [6.0.3]
+- rspec-rails
 
 ##### 1. Check out the repository
 
