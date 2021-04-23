@@ -23,6 +23,13 @@ Run the following commands to create and setup the database.
 bundle exec rake db:create
 bundle exec rake db:migrate
 ```
+##### 3. Install Gems
+
+Run the following commands to create and setup the database.
+
+```ruby
+bundle install
+```
 
 ##### 4. Start the Rails server
 
