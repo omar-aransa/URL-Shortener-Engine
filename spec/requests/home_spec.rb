@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe "link redirection", type: :request do
 
     it "redirect to the original URL" do
-      url = "https://bitbucket.org/teamservicehigh/merchants/src/master/"
+      url = "https://www.google.com/"
       shortener = Shortener.new(url)
       link = shortener.generata_short_link
 

@@ -2,17 +2,17 @@ require 'rails_helper'
 
 RSpec.describe Shortener do
     it 'shortens a given URL to a 7 character lookup code' do
-      url = "https://bitbucket.org/teamservicehigh/merchants/src/master/"
+      url = "https://www.google.com/"
       shortener = Shortener.new(url)
       expect(shortener.lookup_code.length).to eq(7)  
     end
 
     it 'gives each URL its own lookup code' do
-        url = "https://bitbucket.org/teamservicehigh/merchants/src/master/"
+        url = "https://www.google.com/"
         shortener = Shortener.new(url)
         code1 = shortener.lookup_code
 
-        url = "https://bitbucket.org/teamservicehigh/merchants/src/copy/"
+        url = "https://github.com/"
         shortener = Shortener.new(url)
         code2 = shortener.lookup_code
 
@@ -20,7 +20,7 @@ RSpec.describe Shortener do
     end
 
     it 'generates a link record with a unique lookup code' do
-        url = "https://bitbucket.org/teamservicehigh/merchants/src/master/"
+        url = "https://www.google.com/"
         shortener = Shortener.new(url)
         link = shortener.generata_short_link
         expect(link.valid?).to be(true)

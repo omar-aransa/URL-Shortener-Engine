@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe LinksController, type: :controller do
 
     it 'can shorten a link provided by a user' do
-        url = "https://bitbucket.org/teamservicehigh/merchants/src/master/"
+        url = "https://www.google.com/"
         request.env["HTTP_ACCEPT"] = "text/javascript"
         post :create, params: { link:{ original_url: url}}
         link = assigns(:link)

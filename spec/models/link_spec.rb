@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe Link, type: :model do
   it 'is valid if it has an original URL and lookup code' do
     link = Link.new(
-      original_url: "https://bitbucket.org/teamservicehigh/merchants/src/master/",
+      original_url: "https://www.google.com/",
       lookup_code: "1234567"
     )
     expect(link.valid?).to be(true)
@@ -19,7 +19,7 @@ RSpec.describe Link, type: :model do
 
   it 'is invalid if it does not have a lookup code' do
     link = Link.new(
-      original_url: "https://bitbucket.org/teamservicehigh/merchants/src/master/",
+      original_url: "https://www.google.com/",
     )
     expect(link.valid?).to be(false)
   end
@@ -33,13 +33,13 @@ RSpec.describe Link, type: :model do
 
   it 'is invalid if the lookup code already exists' do
     link = Link.new(
-      original_url: "https://bitbucket.org/teamservicehigh/merchants/src/master/",
+      original_url: "https://www.google.com/",
       lookup_code: "1234567"
     )
     link.save
 
     link2 = Link.new(
-      original_url: "https://bitbucket.org/teamservicehigh/merchants/src/copy/",
+      original_url: "https://github.com/",
       lookup_code: "1234567"
     )
     expect(link2.valid?).to be(false)

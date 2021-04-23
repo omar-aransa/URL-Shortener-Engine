@@ -1718,3 +1718,162 @@ Completed 302 Found in 6ms (ActiveRecord: 0.2ms | Allocations: 455)
   [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
   [1m[36mLink Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? AND "links"."id" != ? LIMIT ?[0m  [["lookup_code", "d894bb9"], ["id", 2], ["LIMIT", 1]]
   [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "links"[0m
+  [1m[35m (474.8ms)[0m  [1m[35mCREATE TABLE "links" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "lookup_code" varchar, "original_url" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (608.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (392.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20210423123048)[0m
+  [1m[35m (397.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "test"], ["created_at", "2021-04-23 22:00:14.358189"], ["updated_at", "2021-04-23 22:00:14.358189"]]
+  [1m[35m (365.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "a686f00459f29ccbcb343ae4d185e0d815eb1a4e"], ["created_at", "2021-04-23 22:00:14.726563"], ["updated_at", "2021-04-23 22:00:14.726563"]]
+  [1m[35m (447.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Processing by LinksController#create as JS
+  Parameters: {"link"=>{"original_url"=>"https://bitbucket.org/teamservicehigh/merchants/src/master/"}}
+  [1m[36mLink Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "f115608"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLink Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "f115608"], ["LIMIT", 1]]
+  [1m[36mLink Create (0.3ms)[0m  [1m[32mINSERT INTO "links" ("lookup_code", "original_url", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["lookup_code", "f115608"], ["original_url", "https://bitbucket.org/teamservicehigh/merchants/src/master/"], ["created_at", "2021-04-23 22:00:15.222164"], ["updated_at", "2021-04-23 22:00:15.222164"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  Rendering links/create.js.erb
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered links/create.js.erb (Duration: 0.4ms | Allocations: 155)
+Completed 200 OK in 16ms (Views: 3.0ms | ActiveRecord: 1.1ms | Allocations: 7347)
+  [1m[36mLink Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? AND "links"."id" != ? LIMIT ?[0m  [["lookup_code", "f115608"], ["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mLink Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "1234567"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mLink Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "1234567"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mLink Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mLink Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "1234567"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLink Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "1234567"], ["LIMIT", 1]]
+  [1m[36mLink Create (0.2ms)[0m  [1m[32mINSERT INTO "links" ("lookup_code", "original_url", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["lookup_code", "1234567"], ["original_url", "https://bitbucket.org/teamservicehigh/merchants/src/master/"], ["created_at", "2021-04-23 22:00:15.271444"], ["updated_at", "2021-04-23 22:00:15.271444"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mLink Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "1234567"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mLink Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "e1e2016"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLink Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "e1e2016"], ["LIMIT", 1]]
+  [1m[36mLink Create (0.2ms)[0m  [1m[32mINSERT INTO "links" ("lookup_code", "original_url", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["lookup_code", "e1e2016"], ["original_url", "https://bitbucket.org/teamservicehigh/merchants/src/master/"], ["created_at", "2021-04-23 22:00:15.276366"], ["updated_at", "2021-04-23 22:00:15.276366"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/e1e2016" for 127.0.0.1 at 2021-04-24 00:00:15 +0200
+Processing by LinksController#show as HTML
+  Parameters: {"lookup_code"=>"e1e2016"}
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "e1e2016"], ["LIMIT", 1]]
+Redirected to https://bitbucket.org/teamservicehigh/merchants/src/master/
+Completed 302 Found in 6ms (ActiveRecord: 0.2ms | Allocations: 456)
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mLink Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "20889c3"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mLink Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "424a211"], ["LIMIT", 1]]
+  [1m[36mLink Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "7a010ab"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mLink Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "1ac2ac5"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLink Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "1ac2ac5"], ["LIMIT", 1]]
+  [1m[36mLink Create (0.2ms)[0m  [1m[32mINSERT INTO "links" ("lookup_code", "original_url", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["lookup_code", "1ac2ac5"], ["original_url", "https://bitbucket.org/teamservicehigh/merchants/src/master/"], ["created_at", "2021-04-23 22:00:15.296655"], ["updated_at", "2021-04-23 22:00:15.296655"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mLink Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? AND "links"."id" != ? LIMIT ?[0m  [["lookup_code", "1ac2ac5"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mLink Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "f17a252"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLink Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "f17a252"], ["LIMIT", 1]]
+  [1m[36mLink Create (0.1ms)[0m  [1m[32mINSERT INTO "links" ("lookup_code", "original_url", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["lookup_code", "f17a252"], ["original_url", "https://bitbucket.org/teamservicehigh/merchants/src/master/"], ["created_at", "2021-04-23 22:00:15.299366"], ["updated_at", "2021-04-23 22:00:15.299366"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mLink Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? AND "links"."id" != ? LIMIT ?[0m  [["lookup_code", "f17a252"], ["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Processing by LinksController#create as JS
+  Parameters: {"link"=>{"original_url"=>"https://www.google.com/"}}
+  [1m[36mLink Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "ea81231"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLink Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "ea81231"], ["LIMIT", 1]]
+  [1m[36mLink Create (0.3ms)[0m  [1m[32mINSERT INTO "links" ("lookup_code", "original_url", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["lookup_code", "ea81231"], ["original_url", "https://www.google.com/"], ["created_at", "2021-04-23 22:08:10.687684"], ["updated_at", "2021-04-23 22:08:10.687684"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  Rendering links/create.js.erb
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered links/create.js.erb (Duration: 0.7ms | Allocations: 154)
+Completed 200 OK in 18ms (Views: 3.9ms | ActiveRecord: 1.4ms | Allocations: 7083)
+  [1m[36mLink Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? AND "links"."id" != ? LIMIT ?[0m  [["lookup_code", "ea81231"], ["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mLink Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "1234567"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mLink Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "1234567"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mLink Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mLink Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "1234567"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLink Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "1234567"], ["LIMIT", 1]]
+  [1m[36mLink Create (0.3ms)[0m  [1m[32mINSERT INTO "links" ("lookup_code", "original_url", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["lookup_code", "1234567"], ["original_url", "https://www.google.com/"], ["created_at", "2021-04-23 22:08:10.721463"], ["updated_at", "2021-04-23 22:08:10.721463"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mLink Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "1234567"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mLink Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "63fb6aa"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLink Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "63fb6aa"], ["LIMIT", 1]]
+  [1m[36mLink Create (0.3ms)[0m  [1m[32mINSERT INTO "links" ("lookup_code", "original_url", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["lookup_code", "63fb6aa"], ["original_url", "https://www.google.com/"], ["created_at", "2021-04-23 22:08:10.729645"], ["updated_at", "2021-04-23 22:08:10.729645"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/63fb6aa" for 127.0.0.1 at 2021-04-24 00:08:10 +0200
+Processing by LinksController#show as HTML
+  Parameters: {"lookup_code"=>"63fb6aa"}
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "63fb6aa"], ["LIMIT", 1]]
+Redirected to https://www.google.com/
+Completed 302 Found in 8ms (ActiveRecord: 0.3ms | Allocations: 454)
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mLink Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "27a950a"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mLink Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "7ad06cf"], ["LIMIT", 1]]
+  [1m[36mLink Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "8bee9d3"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mLink Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "5fca7a1"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLink Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "5fca7a1"], ["LIMIT", 1]]
+  [1m[36mLink Create (0.2ms)[0m  [1m[32mINSERT INTO "links" ("lookup_code", "original_url", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["lookup_code", "5fca7a1"], ["original_url", "https://www.google.com/"], ["created_at", "2021-04-23 22:08:10.755882"], ["updated_at", "2021-04-23 22:08:10.755882"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mLink Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? AND "links"."id" != ? LIMIT ?[0m  [["lookup_code", "5fca7a1"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mLink Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "9a0c181"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLink Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "9a0c181"], ["LIMIT", 1]]
+  [1m[36mLink Create (0.1ms)[0m  [1m[32mINSERT INTO "links" ("lookup_code", "original_url", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["lookup_code", "9a0c181"], ["original_url", "https://www.google.com/"], ["created_at", "2021-04-23 22:08:10.758924"], ["updated_at", "2021-04-23 22:08:10.758924"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mLink Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? AND "links"."id" != ? LIMIT ?[0m  [["lookup_code", "9a0c181"], ["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
