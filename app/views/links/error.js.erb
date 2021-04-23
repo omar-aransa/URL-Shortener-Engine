@@ -1,0 +1,4 @@
+var message = "<%=  @link.errors.full_messages.join(". ") << '.' %>"
+var element = document.getElementById('short-link');
+var html = "<%= j render 'invalid', link: @link.errors.full_messages.join(". ") << '.' %>";
+element.innerHTML = html;

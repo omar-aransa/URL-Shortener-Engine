@@ -1,0 +1,2110 @@
+  [1m[35m (8.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (97.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (113.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateLinks (20210423123048)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "links" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "lookup_code" varchar, "original_url" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210423123048"]]
+  [1m[35m (116.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2021-04-23 12:35:26.989735"], ["updated_at", "2021-04-23 12:35:26.989735"]]
+  [1m[35m (75.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2021-04-23 20:23:54 +0200
+  [1m[35m (11.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 22.8ms | Allocations: 299)
+[Webpacker] Compiling...
+Started GET "/" for 127.0.0.1 at 2021-04-23 20:24:06 +0200
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 5)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /home/omar/URL_shortener/public/packs
+[Webpacker] Hash: ef270c56fa66020c9089
+Version: webpack 4.46.0
+Time: 6200ms
+Built at: 04/23/2021 8:24:13 PM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-e88c6c3304a15e6886b6.js    124 KiB  application  [emitted] [immutable]  application
+js/application-e88c6c3304a15e6886b6.js.map    139 KiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-e88c6c3304a15e6886b6.js js/application-e88c6c3304a15e6886b6.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 749 bytes {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 3 hidden modules
+
+[Webpacker] Compiled all packs in /home/omar/URL_shortener/public/packs
+[Webpacker] Hash: ef270c56fa66020c9089
+Version: webpack 4.46.0
+Time: 5503ms
+Built at: 04/23/2021 8:24:13 PM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-e88c6c3304a15e6886b6.js    124 KiB  application  [emitted] [immutable]  application
+js/application-e88c6c3304a15e6886b6.js.map    139 KiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-e88c6c3304a15e6886b6.js js/application-e88c6c3304a15e6886b6.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 749 bytes {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 3 hidden modules
+
+Completed 200 OK in 19715ms (Views: 19684.4ms | ActiveRecord: 0.0ms | Allocations: 26997)
+
+
+Completed 200 OK in 7305ms (Views: 7304.4ms | ActiveRecord: 0.0ms | Allocations: 6658)
+
+
+Started GET "/" for 127.0.0.1 at 2021-04-23 20:24:18 +0200
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 5)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 6ms (Views: 5.4ms | ActiveRecord: 0.0ms | Allocations: 3629)
+
+
+Started GET "/" for 127.0.0.1 at 2021-04-23 20:30:09 +0200
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 40.6ms | Allocations: 2017)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 78ms (Views: 48.1ms | ActiveRecord: 0.9ms | Allocations: 10043)
+
+
+Started POST "/links" for 127.0.0.1 at 2021-04-23 20:30:12 +0200
+Processing by LinksController#create as JS
+  Parameters: {"authenticity_token"=>"5vEFgYfLawrQT/TLvHGSyJxSnAlRjrWM8izx+VGCk81m4Gutjsy4ul1KNMiolkjX/6heivsEQN1kijbl+qPhzw==", "link"=>{"original_url"=>"dada"}, "commit"=>"Create Link"}
+  Rendering links/create.js.erb
+  Rendered links/create.js.erb (Duration: 0.3ms | Allocations: 82)
+Completed 200 OK in 4ms (Views: 2.5ms | ActiveRecord: 0.0ms | Allocations: 2036)
+
+
+Started GET "/" for 127.0.0.1 at 2021-04-23 20:49:52 +0200
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 565)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 19ms (Views: 8.6ms | ActiveRecord: 0.0ms | Allocations: 8014)
+
+
+Started POST "/links" for 127.0.0.1 at 2021-04-23 20:49:55 +0200
+Processing by LinksController#create as JS
+  Parameters: {"authenticity_token"=>"eMWFeD+pO3ckxfSTBOn5GpCyTZ8/3s7jieqrVmfKGRP41OtUNq7ox6nANJAQDiMF80iPHJVUO7IfTGxKzOtrEQ==", "link"=>{"original_url"=>"dada"}, "commit"=>"Create Link"}
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms | Allocations: 2705)
+
+
+  
+NameError (uninitialized constant LinksController::Shortener):
+  
+app/controllers/links_controller.rb:3:in `create'
+Started POST "/links" for 127.0.0.1 at 2021-04-23 20:49:57 +0200
+Processing by LinksController#create as JS
+  Parameters: {"authenticity_token"=>"eMWFeD+pO3ckxfSTBOn5GpCyTZ8/3s7jieqrVmfKGRP41OtUNq7ox6nANJAQDiMF80iPHJVUO7IfTGxKzOtrEQ==", "link"=>{"original_url"=>"dada"}, "commit"=>"Create Link"}
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms | Allocations: 2716)
+
+
+  
+NameError (uninitialized constant LinksController::Shortener):
+  
+app/controllers/links_controller.rb:3:in `create'
+Started GET "/" for 127.0.0.1 at 2021-04-23 21:24:43 +0200
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (14.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 19.4ms | Allocations: 1978)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 69ms (Views: 53.3ms | ActiveRecord: 0.7ms | Allocations: 12818)
+
+
+Started POST "/links" for 127.0.0.1 at 2021-04-23 21:24:46 +0200
+Processing by LinksController#create as JS
+  Parameters: {"authenticity_token"=>"2zI5tl0tSxD2pJgRVhw54wuPy7UCS6PkyXtWZQAEIKVbI1eaVCqYoHuhWBJC++P8aHUJNqjBVrVf3ZF5qyVSpw==", "link"=>{"original_url"=>"asfas"}, "commit"=>"Create Link"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 1016)
+
+
+  
+ArgumentError (wrong number of arguments (given 1, expected 0)):
+  
+app/controllers/links_controller.rb:4:in `initialize'
+app/controllers/links_controller.rb:4:in `new'
+app/controllers/links_controller.rb:4:in `create'
+Started GET "/" for 127.0.0.1 at 2021-04-23 21:26:59 +0200
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 390)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /home/omar/URL_shortener/public/packs
+[Webpacker] Hash: 7c3896beda43d21cb6da
+Version: webpack 4.46.0
+Time: 1464ms
+Built at: 04/23/2021 9:27:02 PM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-2336198e198836600d9a.js    124 KiB  application  [emitted] [immutable]  application
+js/application-2336198e198836600d9a.js.map    139 KiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-2336198e198836600d9a.js js/application-2336198e198836600d9a.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 797 bytes {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 3 hidden modules
+
+Completed 200 OK in 3300ms (Views: 3298.5ms | ActiveRecord: 0.0ms | Allocations: 5262)
+
+
+Started GET "/" for 127.0.0.1 at 2021-04-23 21:27:24 +0200
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 365)
+[Webpacker] Compiling...
+Started GET "/" for 127.0.0.1 at 2021-04-23 21:27:25 +0200
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 366)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /home/omar/URL_shortener/public/packs
+[Webpacker] Hash: ef270c56fa66020c9089
+Version: webpack 4.46.0
+Time: 1162ms
+Built at: 04/23/2021 9:27:26 PM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-e88c6c3304a15e6886b6.js    124 KiB  application  [emitted] [immutable]  application
+js/application-e88c6c3304a15e6886b6.js.map    139 KiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-e88c6c3304a15e6886b6.js js/application-e88c6c3304a15e6886b6.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 749 bytes {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 3 hidden modules
+
+Completed 200 OK in 2600ms (Views: 2598.1ms | ActiveRecord: 0.0ms | Allocations: 10801)
+
+
+Started GET "/" for 127.0.0.1 at 2021-04-23 21:27:26 +0200
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 366)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 7.8ms | ActiveRecord: 0.0ms | Allocations: 3985)
+
+
+[Webpacker] Compiled all packs in /home/omar/URL_shortener/public/packs
+[Webpacker] Hash: ef270c56fa66020c9089
+Version: webpack 4.46.0
+Time: 912ms
+Built at: 04/23/2021 9:27:27 PM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-e88c6c3304a15e6886b6.js    124 KiB  application  [emitted] [immutable]  application
+js/application-e88c6c3304a15e6886b6.js.map    139 KiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-e88c6c3304a15e6886b6.js js/application-e88c6c3304a15e6886b6.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 749 bytes {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 3 hidden modules
+
+Completed 200 OK in 2573ms (Views: 2571.6ms | ActiveRecord: 0.0ms | Allocations: 14663)
+
+
+Started POST "/links" for 127.0.0.1 at 2021-04-23 21:27:35 +0200
+Processing by LinksController#create as JS
+  Parameters: {"authenticity_token"=>"EtmwAWH6R3/vA/VhUWCpbdNkQVop5ApRotnKqHh5ksWSyN4taP2Uz2IGNWJFh3NysJ6D2YNu/wA0fw2001jgxw==", "link"=>{"original_url"=>"dasdas"}, "commit"=>"Create Link"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 930)
+
+
+  
+ArgumentError (wrong number of arguments (given 1, expected 0)):
+  
+app/controllers/links_controller.rb:4:in `initialize'
+app/controllers/links_controller.rb:4:in `new'
+app/controllers/links_controller.rb:4:in `create'
+Started GET "/" for 127.0.0.1 at 2021-04-23 21:38:10 +0200
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 3.5ms | Allocations: 1978)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 33ms (Views: 19.1ms | ActiveRecord: 0.6ms | Allocations: 12822)
+
+
+Started POST "/links" for 127.0.0.1 at 2021-04-23 21:38:14 +0200
+Processing by LinksController#create as JS
+  Parameters: {"authenticity_token"=>"1PfA677vh356qRI1tHxHw1Ci6iSz7gadnYORcmhhHvRU5q7Ht+hUzves0jagm53cM1gopxlk88wLJVZuw0Bs9g==", "link"=>{"original_url"=>"hhhh"}, "commit"=>"Create Link"}
+  [1m[36mLink Exists? (48.2ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "7842204"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:17:in `block in lookup_code'
+  [1m[36mCACHE Link Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "7842204"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  [1m[36mLink Create (6.6ms)[0m  [1m[32mINSERT INTO "links" ("lookup_code", "original_url", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["lookup_code", "7842204"], ["original_url", "hhhh"], ["created_at", "2021-04-23 19:38:14.527859"], ["updated_at", "2021-04-23 19:38:14.527859"]]
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  [1m[35m (231.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  Rendering links/create.js.erb
+  Rendered links/create.js.erb (Duration: 24.9ms | Allocations: 103)
+Completed 200 OK in 328ms (Views: 28.2ms | ActiveRecord: 285.8ms | Allocations: 8843)
+
+
+Started GET "/" for 127.0.0.1 at 2021-04-23 22:11:18 +0200
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 4.5ms | Allocations: 1992)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 57ms (Views: 42.8ms | ActiveRecord: 0.7ms | Allocations: 12881)
+
+
+Started POST "/links" for 127.0.0.1 at 2021-04-23 22:11:20 +0200
+Processing by LinksController#create as JS
+  Parameters: {"authenticity_token"=>"u86ur6TqbHxrkcFgsKV2K+k/1EYAuPDarKlamZHhBBw738CDre2/zOaUAWOkQqw0isUWxaoyBYs6D52FOsB2Hg==", "link"=>{"original_url"=>"dasda"}, "commit"=>"Create Link"}
+  [1m[36mLink Exists? (35.2ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "a2b37b8"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:17:in `block in lookup_code'
+  [1m[36mCACHE Link Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "a2b37b8"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  Rendering links/create.js.erb
+  Rendered links/create.js.erb (Duration: 0.6ms | Allocations: 120)
+Completed 200 OK in 46ms (Views: 3.3ms | ActiveRecord: 35.2ms | Allocations: 4817)
+
+
+Started POST "/links" for 127.0.0.1 at 2021-04-23 22:11:22 +0200
+Processing by LinksController#create as JS
+  Parameters: {"authenticity_token"=>"u86ur6TqbHxrkcFgsKV2K+k/1EYAuPDarKlamZHhBBw738CDre2/zOaUAWOkQqw0isUWxaoyBYs6D52FOsB2Hg==", "link"=>{"original_url"=>"dasda"}, "commit"=>"Create Link"}
+  [1m[36mLink Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "eadd614"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:17:in `block in lookup_code'
+  [1m[36mCACHE Link Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "eadd614"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  Rendering links/create.js.erb
+  Rendered links/create.js.erb (Duration: 0.1ms | Allocations: 12)
+Completed 200 OK in 7ms (Views: 0.6ms | ActiveRecord: 0.4ms | Allocations: 2957)
+
+
+Started POST "/links" for 127.0.0.1 at 2021-04-23 22:11:23 +0200
+Processing by LinksController#create as JS
+  Parameters: {"authenticity_token"=>"u86ur6TqbHxrkcFgsKV2K+k/1EYAuPDarKlamZHhBBw738CDre2/zOaUAWOkQqw0isUWxaoyBYs6D52FOsB2Hg==", "link"=>{"original_url"=>"dasda"}, "commit"=>"Create Link"}
+  [1m[36mLink Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "ebdef77"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:17:in `block in lookup_code'
+  [1m[36mCACHE Link Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "ebdef77"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  Rendering links/create.js.erb
+  Rendered links/create.js.erb (Duration: 0.1ms | Allocations: 12)
+Completed 200 OK in 6ms (Views: 0.6ms | ActiveRecord: 0.3ms | Allocations: 2946)
+
+
+Started POST "/links" for 127.0.0.1 at 2021-04-23 22:11:23 +0200
+Processing by LinksController#create as JS
+  Parameters: {"authenticity_token"=>"u86ur6TqbHxrkcFgsKV2K+k/1EYAuPDarKlamZHhBBw738CDre2/zOaUAWOkQqw0isUWxaoyBYs6D52FOsB2Hg==", "link"=>{"original_url"=>"dasda"}, "commit"=>"Create Link"}
+  [1m[36mLink Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "6d10cbc"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:17:in `block in lookup_code'
+  [1m[36mCACHE Link Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "6d10cbc"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  Rendering links/create.js.erb
+  Rendered links/create.js.erb (Duration: 0.1ms | Allocations: 11)
+Completed 200 OK in 6ms (Views: 0.7ms | ActiveRecord: 0.2ms | Allocations: 2936)
+
+
+Started POST "/links" for 127.0.0.1 at 2021-04-23 22:11:23 +0200
+Processing by LinksController#create as JS
+  Parameters: {"authenticity_token"=>"u86ur6TqbHxrkcFgsKV2K+k/1EYAuPDarKlamZHhBBw738CDre2/zOaUAWOkQqw0isUWxaoyBYs6D52FOsB2Hg==", "link"=>{"original_url"=>"dasda"}, "commit"=>"Create Link"}
+  [1m[36mLink Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "bc1322b"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:17:in `block in lookup_code'
+  [1m[36mCACHE Link Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "bc1322b"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  Rendering links/create.js.erb
+  Rendered links/create.js.erb (Duration: 0.1ms | Allocations: 11)
+Completed 200 OK in 7ms (Views: 0.7ms | ActiveRecord: 0.2ms | Allocations: 2926)
+
+
+Started POST "/links" for 127.0.0.1 at 2021-04-23 22:11:24 +0200
+Processing by LinksController#create as JS
+  Parameters: {"authenticity_token"=>"u86ur6TqbHxrkcFgsKV2K+k/1EYAuPDarKlamZHhBBw738CDre2/zOaUAWOkQqw0isUWxaoyBYs6D52FOsB2Hg==", "link"=>{"original_url"=>"dasda"}, "commit"=>"Create Link"}
+  [1m[36mLink Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "fc4951e"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:17:in `block in lookup_code'
+  [1m[36mCACHE Link Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "fc4951e"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  Rendering links/create.js.erb
+  Rendered links/create.js.erb (Duration: 0.1ms | Allocations: 11)
+Completed 200 OK in 7ms (Views: 0.8ms | ActiveRecord: 0.2ms | Allocations: 2930)
+
+
+Started POST "/links" for 127.0.0.1 at 2021-04-23 22:11:24 +0200
+Processing by LinksController#create as JS
+  Parameters: {"authenticity_token"=>"u86ur6TqbHxrkcFgsKV2K+k/1EYAuPDarKlamZHhBBw738CDre2/zOaUAWOkQqw0isUWxaoyBYs6D52FOsB2Hg==", "link"=>{"original_url"=>"dasda"}, "commit"=>"Create Link"}
+  [1m[36mLink Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "5584d54"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:17:in `block in lookup_code'
+  [1m[36mCACHE Link Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "5584d54"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  Rendering links/create.js.erb
+  Rendered links/create.js.erb (Duration: 0.1ms | Allocations: 11)
+Completed 200 OK in 6ms (Views: 0.9ms | ActiveRecord: 0.2ms | Allocations: 2918)
+
+
+Started POST "/links" for 127.0.0.1 at 2021-04-23 22:11:24 +0200
+Processing by LinksController#create as JS
+  Parameters: {"authenticity_token"=>"u86ur6TqbHxrkcFgsKV2K+k/1EYAuPDarKlamZHhBBw738CDre2/zOaUAWOkQqw0isUWxaoyBYs6D52FOsB2Hg==", "link"=>{"original_url"=>"dasda"}, "commit"=>"Create Link"}
+  [1m[36mLink Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "77e0cd4"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:17:in `block in lookup_code'
+  [1m[36mCACHE Link Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "77e0cd4"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  Rendering links/create.js.erb
+  Rendered links/create.js.erb (Duration: 0.1ms | Allocations: 11)
+Completed 200 OK in 5ms (Views: 0.7ms | ActiveRecord: 0.2ms | Allocations: 2942)
+
+
+Started POST "/links" for 127.0.0.1 at 2021-04-23 22:11:24 +0200
+Processing by LinksController#create as JS
+  Parameters: {"authenticity_token"=>"u86ur6TqbHxrkcFgsKV2K+k/1EYAuPDarKlamZHhBBw738CDre2/zOaUAWOkQqw0isUWxaoyBYs6D52FOsB2Hg==", "link"=>{"original_url"=>"dasda"}, "commit"=>"Create Link"}
+  [1m[36mLink Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "6886439"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:17:in `block in lookup_code'
+  [1m[36mCACHE Link Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "6886439"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  Rendering links/create.js.erb
+  Rendered links/create.js.erb (Duration: 0.1ms | Allocations: 11)
+Completed 200 OK in 5ms (Views: 0.8ms | ActiveRecord: 0.2ms | Allocations: 2924)
+
+
+Started POST "/links" for 127.0.0.1 at 2021-04-23 22:11:24 +0200
+Processing by LinksController#create as JS
+  Parameters: {"authenticity_token"=>"u86ur6TqbHxrkcFgsKV2K+k/1EYAuPDarKlamZHhBBw738CDre2/zOaUAWOkQqw0isUWxaoyBYs6D52FOsB2Hg==", "link"=>{"original_url"=>"dasda"}, "commit"=>"Create Link"}
+  [1m[36mLink Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "d873111"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:17:in `block in lookup_code'
+  [1m[36mCACHE Link Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "d873111"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  Rendering links/create.js.erb
+  Rendered links/create.js.erb (Duration: 0.1ms | Allocations: 11)
+Completed 200 OK in 7ms (Views: 0.9ms | ActiveRecord: 0.3ms | Allocations: 2936)
+
+
+Started POST "/links" for 127.0.0.1 at 2021-04-23 22:11:24 +0200
+Processing by LinksController#create as JS
+  Parameters: {"authenticity_token"=>"u86ur6TqbHxrkcFgsKV2K+k/1EYAuPDarKlamZHhBBw738CDre2/zOaUAWOkQqw0isUWxaoyBYs6D52FOsB2Hg==", "link"=>{"original_url"=>"dasda"}, "commit"=>"Create Link"}
+  [1m[36mLink Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "117f5a8"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:17:in `block in lookup_code'
+  [1m[36mCACHE Link Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "117f5a8"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  Rendering links/create.js.erb
+  Rendered links/create.js.erb (Duration: 0.1ms | Allocations: 11)
+Completed 200 OK in 8ms (Views: 0.7ms | ActiveRecord: 0.3ms | Allocations: 2932)
+
+
+Started POST "/links" for 127.0.0.1 at 2021-04-23 22:11:25 +0200
+Processing by LinksController#create as JS
+  Parameters: {"authenticity_token"=>"u86ur6TqbHxrkcFgsKV2K+k/1EYAuPDarKlamZHhBBw738CDre2/zOaUAWOkQqw0isUWxaoyBYs6D52FOsB2Hg==", "link"=>{"original_url"=>"dasda"}, "commit"=>"Create Link"}
+  [1m[36mLink Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "08c8a65"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:17:in `block in lookup_code'
+  [1m[36mCACHE Link Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "08c8a65"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  Rendering links/create.js.erb
+  Rendered links/create.js.erb (Duration: 0.1ms | Allocations: 11)
+Completed 200 OK in 6ms (Views: 0.7ms | ActiveRecord: 0.2ms | Allocations: 2930)
+
+
+Started POST "/links" for 127.0.0.1 at 2021-04-23 22:11:25 +0200
+Processing by LinksController#create as JS
+  Parameters: {"authenticity_token"=>"u86ur6TqbHxrkcFgsKV2K+k/1EYAuPDarKlamZHhBBw738CDre2/zOaUAWOkQqw0isUWxaoyBYs6D52FOsB2Hg==", "link"=>{"original_url"=>"dasda"}, "commit"=>"Create Link"}
+  [1m[36mLink Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "f41135f"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:17:in `block in lookup_code'
+  [1m[36mCACHE Link Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "f41135f"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  Rendering links/create.js.erb
+  Rendered links/create.js.erb (Duration: 0.1ms | Allocations: 11)
+Completed 200 OK in 8ms (Views: 0.8ms | ActiveRecord: 0.3ms | Allocations: 2928)
+
+
+Started POST "/links" for 127.0.0.1 at 2021-04-23 22:11:25 +0200
+Processing by LinksController#create as JS
+  Parameters: {"authenticity_token"=>"u86ur6TqbHxrkcFgsKV2K+k/1EYAuPDarKlamZHhBBw738CDre2/zOaUAWOkQqw0isUWxaoyBYs6D52FOsB2Hg==", "link"=>{"original_url"=>"dasda"}, "commit"=>"Create Link"}
+  [1m[36mLink Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "19951dd"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:17:in `block in lookup_code'
+  [1m[36mCACHE Link Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "19951dd"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  Rendering links/create.js.erb
+  Rendered links/create.js.erb (Duration: 0.1ms | Allocations: 11)
+Completed 200 OK in 7ms (Views: 1.0ms | ActiveRecord: 0.2ms | Allocations: 2928)
+
+
+Started POST "/links" for 127.0.0.1 at 2021-04-23 22:11:25 +0200
+Processing by LinksController#create as JS
+  Parameters: {"authenticity_token"=>"u86ur6TqbHxrkcFgsKV2K+k/1EYAuPDarKlamZHhBBw738CDre2/zOaUAWOkQqw0isUWxaoyBYs6D52FOsB2Hg==", "link"=>{"original_url"=>"dasda"}, "commit"=>"Create Link"}
+  [1m[36mLink Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "8893193"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:17:in `block in lookup_code'
+  [1m[36mCACHE Link Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "8893193"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  Rendering links/create.js.erb
+  Rendered links/create.js.erb (Duration: 0.1ms | Allocations: 11)
+Completed 200 OK in 6ms (Views: 0.8ms | ActiveRecord: 0.2ms | Allocations: 2928)
+
+
+Started POST "/links" for 127.0.0.1 at 2021-04-23 22:11:25 +0200
+Processing by LinksController#create as JS
+  Parameters: {"authenticity_token"=>"u86ur6TqbHxrkcFgsKV2K+k/1EYAuPDarKlamZHhBBw738CDre2/zOaUAWOkQqw0isUWxaoyBYs6D52FOsB2Hg==", "link"=>{"original_url"=>"dasda"}, "commit"=>"Create Link"}
+  [1m[36mLink Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "8e5ccdb"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:17:in `block in lookup_code'
+  [1m[36mCACHE Link Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "8e5ccdb"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  Rendering links/create.js.erb
+  Rendered links/create.js.erb (Duration: 0.1ms | Allocations: 11)
+Completed 200 OK in 9ms (Views: 1.1ms | ActiveRecord: 0.4ms | Allocations: 2922)
+
+
+Started POST "/links" for 127.0.0.1 at 2021-04-23 22:11:25 +0200
+Processing by LinksController#create as JS
+  Parameters: {"authenticity_token"=>"u86ur6TqbHxrkcFgsKV2K+k/1EYAuPDarKlamZHhBBw738CDre2/zOaUAWOkQqw0isUWxaoyBYs6D52FOsB2Hg==", "link"=>{"original_url"=>"dasda"}, "commit"=>"Create Link"}
+  [1m[36mLink Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "250bfd8"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:17:in `block in lookup_code'
+  [1m[36mCACHE Link Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "250bfd8"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  Rendering links/create.js.erb
+  Rendered links/create.js.erb (Duration: 0.1ms | Allocations: 11)
+Completed 200 OK in 7ms (Views: 0.9ms | ActiveRecord: 0.2ms | Allocations: 2936)
+
+
+Started POST "/links" for 127.0.0.1 at 2021-04-23 22:14:48 +0200
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by LinksController#create as JS
+  Parameters: {"authenticity_token"=>"u86ur6TqbHxrkcFgsKV2K+k/1EYAuPDarKlamZHhBBw738CDre2/zOaUAWOkQqw0isUWxaoyBYs6D52FOsB2Hg==", "link"=>{"original_url"=>"dasda"}, "commit"=>"Create Link"}
+  [1m[36mLink Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "6ee8170"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:17:in `block in lookup_code'
+  [1m[36mCACHE Link Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "6ee8170"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  Rendering links/create.js.erb
+  Rendered links/create.js.erb (Duration: 0.4ms | Allocations: 111)
+Completed 200 OK in 17ms (Views: 2.4ms | ActiveRecord: 0.9ms | Allocations: 7745)
+
+
+Started GET "/" for 127.0.0.1 at 2021-04-23 22:14:49 +0200
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 569)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 12ms (Views: 9.2ms | ActiveRecord: 0.0ms | Allocations: 5092)
+
+
+Started POST "/links" for 127.0.0.1 at 2021-04-23 22:14:50 +0200
+Processing by LinksController#create as JS
+  Parameters: {"authenticity_token"=>"Z/KrfFrB32MG65hpbS63RzQ0xZX1dv6v6Pvd72Ko5OLn48VQU8YM04vuWGp5yW1YV84HFl/8C/5+XRrzyYmW4A==", "link"=>{"original_url"=>""}, "commit"=>"Create Link"}
+  [1m[36mLink Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "6e19b3f"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:17:in `block in lookup_code'
+  [1m[36mCACHE Link Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "6e19b3f"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  Rendering links/create.js.erb
+  Rendered links/create.js.erb (Duration: 0.1ms | Allocations: 11)
+Completed 200 OK in 6ms (Views: 0.7ms | ActiveRecord: 0.2ms | Allocations: 3291)
+
+
+Started GET "/" for 127.0.0.1 at 2021-04-23 22:16:04 +0200
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 426)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 16ms (Views: 7.4ms | ActiveRecord: 0.7ms | Allocations: 7450)
+
+
+Started POST "/links" for 127.0.0.1 at 2021-04-23 22:16:06 +0200
+Processing by LinksController#create as JS
+  Parameters: {"authenticity_token"=>"NkznKdkBlwe9u7BYO3QqyQ1cBHpks+X1bhdX1R8aE/K2XYkF0AZEtzC+cFsvk/DWbqbG+c45EKT4sZDJtDth8A==", "link"=>{"original_url"=>"das"}, "commit"=>"Create Link"}
+  [1m[36mLink Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "45c6789"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:17:in `block in lookup_code'
+  [1m[36mCACHE Link Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "45c6789"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  Rendering links/error.js.erb
+  Rendered links/error.js.erb (Duration: 1.0ms | Allocations: 261)
+Completed 200 OK in 9ms (Views: 2.4ms | ActiveRecord: 0.2ms | Allocations: 3648)
+
+
+Started GET "/" for 127.0.0.1 at 2021-04-23 22:16:24 +0200
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 373)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 7.1ms | ActiveRecord: 0.0ms | Allocations: 3981)
+
+
+Started POST "/links" for 127.0.0.1 at 2021-04-23 22:16:42 +0200
+Processing by LinksController#create as JS
+  Parameters: {"authenticity_token"=>"yLInScLsW1kQYJK1ryFXA5EGhepYFpAXzIb811J0aPpIo0lly+uI6Z1lUra7xo0c8vxHafKcZUZaIDvL+VUa+A==", "link"=>{"original_url"=>"sdadas"}, "commit"=>"Create Link"}
+  [1m[36mLink Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "8a98751"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:17:in `block in lookup_code'
+  [1m[36mCACHE Link Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "8a98751"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  Rendering links/error.js.erb
+  Rendered links/error.js.erb (Duration: 0.7ms | Allocations: 153)
+Completed 200 OK in 8ms (Views: 1.9ms | ActiveRecord: 0.2ms | Allocations: 3085)
+
+
+Started POST "/links" for 127.0.0.1 at 2021-04-23 22:16:46 +0200
+Processing by LinksController#create as JS
+  Parameters: {"authenticity_token"=>"yLInScLsW1kQYJK1ryFXA5EGhepYFpAXzIb811J0aPpIo0lly+uI6Z1lUra7xo0c8vxHafKcZUZaIDvL+VUa+A==", "link"=>{"original_url"=>"http://localhost:3000/"}, "commit"=>"Create Link"}
+  [1m[36mLink Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "8f8e338"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:17:in `block in lookup_code'
+  [1m[36mCACHE Link Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "8f8e338"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  [1m[36mLink Create (15.1ms)[0m  [1m[32mINSERT INTO "links" ("lookup_code", "original_url", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["lookup_code", "8f8e338"], ["original_url", "http://localhost:3000/"], ["created_at", "2021-04-23 20:16:46.951438"], ["updated_at", "2021-04-23 20:16:46.951438"]]
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  [1m[35m (85.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  Rendering links/create.js.erb
+  Rendered links/create.js.erb (Duration: 0.1ms | Allocations: 6)
+Completed 200 OK in 117ms (Views: 0.7ms | ActiveRecord: 100.5ms | Allocations: 6815)
+
+
+Started POST "/links" for 127.0.0.1 at 2021-04-23 22:16:58 +0200
+Processing by LinksController#create as JS
+  Parameters: {"authenticity_token"=>"yLInScLsW1kQYJK1ryFXA5EGhepYFpAXzIb811J0aPpIo0lly+uI6Z1lUra7xo0c8vxHafKcZUZaIDvL+VUa+A==", "link"=>{"original_url"=>""}, "commit"=>"Create Link"}
+  [1m[36mLink Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "dc014d3"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:17:in `block in lookup_code'
+  [1m[36mCACHE Link Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "dc014d3"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  Rendering links/error.js.erb
+  Rendered links/error.js.erb (Duration: 0.7ms | Allocations: 292)
+Completed 200 OK in 7ms (Views: 1.4ms | ActiveRecord: 0.3ms | Allocations: 3470)
+
+
+Started POST "/links" for 127.0.0.1 at 2021-04-23 22:19:20 +0200
+Processing by LinksController#create as JS
+  Parameters: {"authenticity_token"=>"yLInScLsW1kQYJK1ryFXA5EGhepYFpAXzIb811J0aPpIo0lly+uI6Z1lUra7xo0c8vxHafKcZUZaIDvL+VUa+A==", "link"=>{"original_url"=>"http://localhost:3000/"}, "commit"=>"Create Link"}
+  [1m[36mLink Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "9c2f7e4"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:17:in `block in lookup_code'
+  [1m[36mCACHE Link Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "9c2f7e4"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  [1m[36mLink Create (0.3ms)[0m  [1m[32mINSERT INTO "links" ("lookup_code", "original_url", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["lookup_code", "9c2f7e4"], ["original_url", "http://localhost:3000/"], ["created_at", "2021-04-23 20:19:20.332691"], ["updated_at", "2021-04-23 20:19:20.332691"]]
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  [1m[35m (345.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  Rendering links/create.js.erb
+  Rendered links/create.js.erb (Duration: 0.5ms | Allocations: 104)
+Completed 200 OK in 358ms (Views: 2.5ms | ActiveRecord: 345.5ms | Allocations: 8181)
+
+
+Started POST "/links" for 127.0.0.1 at 2021-04-23 22:19:35 +0200
+Processing by LinksController#create as JS
+  Parameters: {"authenticity_token"=>"yLInScLsW1kQYJK1ryFXA5EGhepYFpAXzIb811J0aPpIo0lly+uI6Z1lUra7xo0c8vxHafKcZUZaIDvL+VUa+A==", "link"=>{"original_url"=>"http://localhost:3000/"}, "commit"=>"Create Link"}
+  [1m[36mLink Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "bf11883"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:17:in `block in lookup_code'
+  [1m[36mCACHE Link Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "bf11883"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  [1m[36mLink Create (0.3ms)[0m  [1m[32mINSERT INTO "links" ("lookup_code", "original_url", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["lookup_code", "bf11883"], ["original_url", "http://localhost:3000/"], ["created_at", "2021-04-23 20:19:35.529962"], ["updated_at", "2021-04-23 20:19:35.529962"]]
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  [1m[35m (90.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  Rendering links/create.js.erb
+  Rendered links/create.js.erb (Duration: 0.6ms | Allocations: 103)
+Completed 200 OK in 106ms (Views: 2.9ms | ActiveRecord: 90.5ms | Allocations: 7863)
+
+
+Started GET "/" for 127.0.0.1 at 2021-04-23 22:21:47 +0200
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by HomeController#index as HTML
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 1420)
+
+
+  
+SyntaxError (/home/omar/URL_shortener/app/models/link.rb:17: unterminated string meets end of file
+/home/omar/URL_shortener/app/models/link.rb:17: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/models/link.rb:17: unterminated string meets end of file
+app/models/link.rb:17: syntax error, unexpected end-of-input, expecting `end'
+app/models/link.rb:17: unterminated string meets end of file
+app/models/link.rb:17: syntax error, unexpected end-of-input, expecting `end'
+app/models/link.rb:17: unterminated string meets end of file
+app/models/link.rb:17: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/home_controller.rb:3:in `index'
+Started GET "/" for 127.0.0.1 at 2021-04-23 22:22:04 +0200
+Processing by HomeController#index as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 1442)
+
+
+  
+SyntaxError (/home/omar/URL_shortener/app/models/link.rb:17: unterminated string meets end of file
+/home/omar/URL_shortener/app/models/link.rb:17: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/models/link.rb:17: unterminated string meets end of file
+app/models/link.rb:17: syntax error, unexpected end-of-input, expecting `end'
+app/models/link.rb:17: unterminated string meets end of file
+app/models/link.rb:17: syntax error, unexpected end-of-input, expecting `end'
+app/models/link.rb:17: unterminated string meets end of file
+app/models/link.rb:17: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/home_controller.rb:3:in `index'
+Started GET "/" for 127.0.0.1 at 2021-04-23 22:22:27 +0200
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 590)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 21ms (Views: 9.5ms | ActiveRecord: 1.0ms | Allocations: 8531)
+
+
+Started POST "/links" for 127.0.0.1 at 2021-04-23 22:22:32 +0200
+Processing by LinksController#create as JS
+  Parameters: {"authenticity_token"=>"sIcr39hjtqpj8xrccUNkkHhye89ds6Bm6yA3SObESIEwlkXz0WRlGu722t9lpL6PG4i5TPc5VTd9hvBUTeU6gw==", "link"=>{"original_url"=>"http://localhost:3000/"}, "commit"=>"Create Link"}
+  [1m[36mLink Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "30b98bc"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:17:in `block in lookup_code'
+  [1m[36mCACHE Link Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "30b98bc"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  [1m[36mLink Create (0.3ms)[0m  [1m[32mINSERT INTO "links" ("lookup_code", "original_url", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["lookup_code", "30b98bc"], ["original_url", "http://localhost:3000/"], ["created_at", "2021-04-23 20:22:32.490788"], ["updated_at", "2021-04-23 20:22:32.490788"]]
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  [1m[35m (204.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  Rendering links/create.js.erb
+  Rendered links/create.js.erb (Duration: 14.1ms | Allocations: 4188)
+Completed 500 Internal Server Error in 236ms (ActiveRecord: 205.5ms | Allocations: 12429)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `lookupCode' for #<Link:0x00007fafe8038488>
+Did you mean?  lookup_code
+               lookup_code?
+               lookup_code=):
+    4: var shortLink = "http://localhost:3000/s/" + lookupCode
+    5: 
+    6: var element = document.getElementById('short-link');
+    7: element.innerHTML = "<%=  @link.shortened_url %>";
+  
+app/models/link.rb:14:in `shortened_url'
+app/views/links/create.js.erb:7
+Started GET "/" for 127.0.0.1 at 2021-04-23 22:23:14 +0200
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 524)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 8.3ms | ActiveRecord: 0.0ms | Allocations: 5047)
+
+
+Started POST "/links" for 127.0.0.1 at 2021-04-23 22:23:18 +0200
+Processing by LinksController#create as JS
+  Parameters: {"authenticity_token"=>"geDeR7SNU05cFBlZzI6I8X5Iix+daBV4ZLwjeMHkBnQB8bBrvYqA/tER2VrYaVLuHbJJnDfi4CnyGuRkasV0dg==", "link"=>{"original_url"=>"http://localhost:3000/"}, "commit"=>"Create Link"}
+  [1m[36mLink Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "9118f64"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:17:in `block in lookup_code'
+  [1m[36mCACHE Link Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "9118f64"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  [1m[36mLink Create (0.5ms)[0m  [1m[32mINSERT INTO "links" ("lookup_code", "original_url", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["lookup_code", "9118f64"], ["original_url", "http://localhost:3000/"], ["created_at", "2021-04-23 20:23:18.369312"], ["updated_at", "2021-04-23 20:23:18.369312"]]
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  [1m[35m (252.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  Rendering links/create.js.erb
+  Rendered links/create.js.erb (Duration: 12.7ms | Allocations: 4119)
+Completed 500 Internal Server Error in 287ms (ActiveRecord: 253.2ms | Allocations: 12164)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `lookupCode' for #<Link:0x00007fafdc15da40>
+Did you mean?  lookup_code
+               lookup_code?
+               lookup_code=):
+    1: 
+    2: 
+    3: var element = document.getElementById('short-link');
+    4: element.innerHTML = "<%=  @link.shortened_url %>";
+  
+app/models/link.rb:14:in `shortened_url'
+app/views/links/create.js.erb:4
+Started POST "/links" for 127.0.0.1 at 2021-04-23 22:24:05 +0200
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by LinksController#create as JS
+  Parameters: {"authenticity_token"=>"geDeR7SNU05cFBlZzI6I8X5Iix+daBV4ZLwjeMHkBnQB8bBrvYqA/tER2VrYaVLuHbJJnDfi4CnyGuRkasV0dg==", "link"=>{"original_url"=>"http://localhost:3000/"}, "commit"=>"Create Link"}
+  [1m[36mLink Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "b316efb"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:17:in `block in lookup_code'
+  [1m[36mCACHE Link Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "b316efb"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  [1m[36mLink Create (0.3ms)[0m  [1m[32mINSERT INTO "links" ("lookup_code", "original_url", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["lookup_code", "b316efb"], ["original_url", "http://localhost:3000/"], ["created_at", "2021-04-23 20:24:05.065713"], ["updated_at", "2021-04-23 20:24:05.065713"]]
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  [1m[35m (89.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  Rendering links/create.js.erb
+  Rendered links/create.js.erb (Duration: 0.6ms | Allocations: 103)
+Completed 200 OK in 121ms (Views: 9.6ms | ActiveRecord: 90.7ms | Allocations: 11567)
+
+
+Started POST "/links" for 127.0.0.1 at 2021-04-23 22:25:12 +0200
+Processing by LinksController#create as JS
+  Parameters: {"authenticity_token"=>"geDeR7SNU05cFBlZzI6I8X5Iix+daBV4ZLwjeMHkBnQB8bBrvYqA/tER2VrYaVLuHbJJnDfi4CnyGuRkasV0dg==", "link"=>{"original_url"=>"http://localhost:3000/"}, "commit"=>"Create Link"}
+  [1m[36mLink Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "4873546"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:17:in `block in lookup_code'
+  [1m[36mCACHE Link Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "4873546"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  [1m[36mLink Create (0.3ms)[0m  [1m[32mINSERT INTO "links" ("lookup_code", "original_url", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["lookup_code", "4873546"], ["original_url", "http://localhost:3000/"], ["created_at", "2021-04-23 20:25:12.983901"], ["updated_at", "2021-04-23 20:25:12.983901"]]
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  [1m[35m (66.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  Rendering links/create.js.erb
+  Rendered links/create.js.erb (Duration: 0.1ms | Allocations: 8)
+Completed 200 OK in 80ms (Views: 1.3ms | ActiveRecord: 67.6ms | Allocations: 6608)
+
+
+Started POST "/links" for 127.0.0.1 at 2021-04-23 22:25:13 +0200
+Processing by LinksController#create as JS
+  Parameters: {"authenticity_token"=>"geDeR7SNU05cFBlZzI6I8X5Iix+daBV4ZLwjeMHkBnQB8bBrvYqA/tER2VrYaVLuHbJJnDfi4CnyGuRkasV0dg==", "link"=>{"original_url"=>"http://localhost:3000/"}, "commit"=>"Create Link"}
+  [1m[36mLink Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "8ccad71"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:17:in `block in lookup_code'
+  [1m[36mCACHE Link Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "8ccad71"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  [1m[36mLink Create (0.4ms)[0m  [1m[32mINSERT INTO "links" ("lookup_code", "original_url", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["lookup_code", "8ccad71"], ["original_url", "http://localhost:3000/"], ["created_at", "2021-04-23 20:25:13.774760"], ["updated_at", "2021-04-23 20:25:13.774760"]]
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  [1m[35m (89.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  Rendering links/create.js.erb
+  Rendered links/create.js.erb (Duration: 0.1ms | Allocations: 8)
+Completed 200 OK in 106ms (Views: 0.6ms | ActiveRecord: 90.8ms | Allocations: 6609)
+
+
+Started POST "/links" for 127.0.0.1 at 2021-04-23 22:25:16 +0200
+Processing by LinksController#create as JS
+  Parameters: {"authenticity_token"=>"geDeR7SNU05cFBlZzI6I8X5Iix+daBV4ZLwjeMHkBnQB8bBrvYqA/tER2VrYaVLuHbJJnDfi4CnyGuRkasV0dg==", "link"=>{"original_url"=>"http://localhost:3000/"}, "commit"=>"Create Link"}
+  [1m[36mLink Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "88110ed"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:17:in `block in lookup_code'
+  [1m[36mCACHE Link Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "88110ed"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  [1m[36mLink Create (0.4ms)[0m  [1m[32mINSERT INTO "links" ("lookup_code", "original_url", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["lookup_code", "88110ed"], ["original_url", "http://localhost:3000/"], ["created_at", "2021-04-23 20:25:16.540292"], ["updated_at", "2021-04-23 20:25:16.540292"]]
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  [1m[35m (111.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  Rendering links/create.js.erb
+  Rendered links/create.js.erb (Duration: 0.1ms | Allocations: 8)
+Completed 200 OK in 123ms (Views: 0.9ms | ActiveRecord: 112.1ms | Allocations: 6923)
+
+
+Started POST "/links" for 127.0.0.1 at 2021-04-23 22:25:17 +0200
+Processing by LinksController#create as JS
+  Parameters: {"authenticity_token"=>"geDeR7SNU05cFBlZzI6I8X5Iix+daBV4ZLwjeMHkBnQB8bBrvYqA/tER2VrYaVLuHbJJnDfi4CnyGuRkasV0dg==", "link"=>{"original_url"=>"http://localhost:3000/"}, "commit"=>"Create Link"}
+  [1m[36mLink Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "92189eb"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:17:in `block in lookup_code'
+  [1m[36mCACHE Link Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "92189eb"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  [1m[36mLink Create (0.3ms)[0m  [1m[32mINSERT INTO "links" ("lookup_code", "original_url", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["lookup_code", "92189eb"], ["original_url", "http://localhost:3000/"], ["created_at", "2021-04-23 20:25:17.083852"], ["updated_at", "2021-04-23 20:25:17.083852"]]
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  [1m[35m (93.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  Rendering links/create.js.erb
+  Rendered links/create.js.erb (Duration: 0.1ms | Allocations: 8)
+Completed 200 OK in 110ms (Views: 1.0ms | ActiveRecord: 93.9ms | Allocations: 6610)
+
+
+Started GET "/" for 127.0.0.1 at 2021-04-23 22:27:58 +0200
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 570)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 9.5ms | ActiveRecord: 0.0ms | Allocations: 5063)
+
+
+Started GET "/" for 127.0.0.1 at 2021-04-23 22:30:29 +0200
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 519)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+Hash: 00c3940dd59903f0193c
+Version: webpack 4.46.0
+Time: 6166ms
+Built at: 04/23/2021 10:30:55 PM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-2602ec357abe6fd5d5f3.js    124 KiB  application  [emitted] [immutable]  application
+js/application-2602ec357abe6fd5d5f3.js.map    139 KiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-2602ec357abe6fd5d5f3.js js/application-2602ec357abe6fd5d5f3.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 791 bytes {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 3 hidden modules
+
+ERROR in ./app/javascript/packs/application.js
+Module not found: Error: Can't resolve '../stylesheet/application.scss' in '/home/omar/URL_shortener/app/javascript/packs'
+ @ ./app/javascript/packs/application.js 13:0-40
+
+Completed 200 OK in 25591ms (Views: 25589.3ms | ActiveRecord: 0.0ms | Allocations: 4983)
+
+
+Started GET "/" for 127.0.0.1 at 2021-04-23 22:31:15 +0200
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 371)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /home/omar/URL_shortener/public/packs
+[Webpacker] Hash: 0c47a43b2e03b9ad84dc
+Version: webpack 4.46.0
+Time: 10706ms
+Built at: 04/23/2021 10:31:30 PM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-9f9304522beaf9fa2c40.js    137 KiB  application  [emitted] [immutable]  application
+js/application-9f9304522beaf9fa2c40.js.map    152 KiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-9f9304522beaf9fa2c40.js js/application-9f9304522beaf9fa2c40.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 792 bytes {application} [built]
+[./app/javascript/stylesheets/application.scss] 664 bytes {application} [built]
+[./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./app/javascript/stylesheets/application.scss] ./node_modules/css-loader/dist/cjs.js??ref--7-1!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./app/javascript/stylesheets/application.scss 505 bytes {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 5 hidden modules
+
+Completed 200 OK in 15038ms (Views: 15037.1ms | ActiveRecord: 0.0ms | Allocations: 3952)
+
+
+Started GET "/" for 127.0.0.1 at 2021-04-23 22:31:32 +0200
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 365)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 6.8ms | ActiveRecord: 0.0ms | Allocations: 2737)
+
+
+Started GET "/" for 127.0.0.1 at 2021-04-23 22:33:55 +0200
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 535)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 18ms (Views: 16.5ms | ActiveRecord: 0.0ms | Allocations: 3819)
+
+
+Started GET "/" for 127.0.0.1 at 2021-04-23 22:34:58 +0200
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 532)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 7.1ms | ActiveRecord: 0.0ms | Allocations: 3821)
+
+
+Started GET "/" for 127.0.0.1 at 2021-04-23 22:36:11 +0200
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 554)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 8.2ms | ActiveRecord: 0.0ms | Allocations: 3823)
+
+
+Started GET "/" for 127.0.0.1 at 2021-04-23 22:37:33 +0200
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 450)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.0ms | Allocations: 3744)
+
+
+Started POST "/links" for 127.0.0.1 at 2021-04-23 22:37:56 +0200
+Processing by LinksController#create as JS
+  Parameters: {"authenticity_token"=>"Ngg3pYQQwfhAJEGXQGWPLvVUSSPRHI0Cr9nOBzkQOSi2GVmJjRcSSM0hgZRUglUxlq6LoHuWeFM5fwkbkjFLKg==", "link"=>{"original_url"=>"https://www.google.com/"}, "commit"=>"Shorten"}
+  [1m[36mLink Exists? (69.1ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "355b4f8"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:17:in `block in lookup_code'
+  [1m[36mCACHE Link Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "355b4f8"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  [1m[36mLink Create (32.0ms)[0m  [1m[32mINSERT INTO "links" ("lookup_code", "original_url", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["lookup_code", "355b4f8"], ["original_url", "https://www.google.com/"], ["created_at", "2021-04-23 20:37:56.419789"], ["updated_at", "2021-04-23 20:37:56.419789"]]
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  [1m[35m (288.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  Rendering links/create.js.erb
+  Rendered links/create.js.erb (Duration: 79.4ms | Allocations: 97)
+Completed 200 OK in 481ms (Views: 81.4ms | ActiveRecord: 389.4ms | Allocations: 8145)
+
+
+Started GET "/" for 127.0.0.1 at 2021-04-23 22:42:41 +0200
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 11.9ms | Allocations: 447)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 158ms (Views: 156.2ms | ActiveRecord: 0.0ms | Allocations: 3728)
+
+
+Started POST "/links" for 127.0.0.1 at 2021-04-23 22:42:44 +0200
+Processing by LinksController#create as JS
+  Parameters: {"authenticity_token"=>"ZM+CsTys3csI4bmqWfGmIjtsjjK1lxIx/zE8NpjDycnk3uydNasOe4XkealNFnw9WJZMsR8d52Bpl/sqM+K7yw==", "link"=>{"original_url"=>"http://localhost:3000/"}, "commit"=>"Shorten"}
+  [1m[36mLink Exists? (14.1ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "88ff0c9"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:17:in `block in lookup_code'
+  [1m[36mCACHE Link Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "88ff0c9"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  [1m[36mLink Create (0.3ms)[0m  [1m[32mINSERT INTO "links" ("lookup_code", "original_url", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["lookup_code", "88ff0c9"], ["original_url", "http://localhost:3000/"], ["created_at", "2021-04-23 20:42:44.962905"], ["updated_at", "2021-04-23 20:42:44.962905"]]
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  [1m[35m (287.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  Rendering links/create.js.erb
+  Rendered links/_link.html.erb (Duration: 400.1ms | Allocations: 125806)
+  Rendered links/create.js.erb (Duration: 401.2ms | Allocations: 126105)
+Completed 500 Internal Server Error in 719ms (ActiveRecord: 302.1ms | Allocations: 134153)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `text' for #<#<Class:0x00007fafe4cac9e8>:0x00007fafe4ca2c40>
+Did you mean?  test):
+    1: <div class="card-footer">
+    2:     <div class="alert alert-success">
+    3:        <b>Shortened URL:</b> <%= text %>
+    4:     </div>
+    5: </div>
+  
+app/views/links/_link.html.erb:3
+app/views/links/create.js.erb:2
+Started POST "/links" for 127.0.0.1 at 2021-04-23 22:42:48 +0200
+Processing by LinksController#create as JS
+  Parameters: {"authenticity_token"=>"ZM+CsTys3csI4bmqWfGmIjtsjjK1lxIx/zE8NpjDycnk3uydNasOe4XkealNFnw9WJZMsR8d52Bpl/sqM+K7yw==", "link"=>{"original_url"=>"http://localhost:3000/"}, "commit"=>"Shorten"}
+  [1m[36mLink Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "3da7cdd"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:17:in `block in lookup_code'
+  [1m[36mCACHE Link Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "3da7cdd"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  [1m[36mLink Create (0.4ms)[0m  [1m[32mINSERT INTO "links" ("lookup_code", "original_url", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["lookup_code", "3da7cdd"], ["original_url", "http://localhost:3000/"], ["created_at", "2021-04-23 20:42:48.800206"], ["updated_at", "2021-04-23 20:42:48.800206"]]
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  [1m[35m (211.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  Rendering links/create.js.erb
+  Rendered links/_link.html.erb (Duration: 225.1ms | Allocations: 125702)
+  Rendered links/create.js.erb (Duration: 225.5ms | Allocations: 125767)
+Completed 500 Internal Server Error in 450ms (ActiveRecord: 212.2ms | Allocations: 132671)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `text' for #<#<Class:0x00007fafe4cac9e8>:0x00007fafe4d2b900>
+Did you mean?  test):
+    1: <div class="card-footer">
+    2:     <div class="alert alert-success">
+    3:        <b>Shortened URL:</b> <%= text %>
+    4:     </div>
+    5: </div>
+  
+app/views/links/_link.html.erb:3
+app/views/links/create.js.erb:2
+Started GET "/" for 127.0.0.1 at 2021-04-23 22:43:07 +0200
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 450)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 7.9ms | ActiveRecord: 0.0ms | Allocations: 3737)
+
+
+Started POST "/links" for 127.0.0.1 at 2021-04-23 22:43:10 +0200
+Processing by LinksController#create as JS
+  Parameters: {"authenticity_token"=>"asTbIGCJuOeOATyYBef5/hVuYMT2uHXwVYaS8x3khtbq1bUMaY5rVwME/JsRACPhdpSiR1wygKHDIFXvtsX01A==", "link"=>{"original_url"=>"http://localhost:3000/"}, "commit"=>"Shorten"}
+  [1m[36mLink Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "0b44e8f"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:17:in `block in lookup_code'
+  [1m[36mCACHE Link Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "0b44e8f"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  [1m[36mLink Create (0.4ms)[0m  [1m[32mINSERT INTO "links" ("lookup_code", "original_url", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["lookup_code", "0b44e8f"], ["original_url", "http://localhost:3000/"], ["created_at", "2021-04-23 20:43:10.521540"], ["updated_at", "2021-04-23 20:43:10.521540"]]
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  [1m[35m (213.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  Rendering links/create.js.erb
+  Rendered links/_link.html.erb (Duration: 0.3ms | Allocations: 102)
+  Rendered links/create.js.erb (Duration: 1.0ms | Allocations: 416)
+Completed 200 OK in 230ms (Views: 3.0ms | ActiveRecord: 214.2ms | Allocations: 8268)
+
+
+Started POST "/links" for 127.0.0.1 at 2021-04-23 22:43:39 +0200
+Processing by LinksController#create as JS
+  Parameters: {"authenticity_token"=>"asTbIGCJuOeOATyYBef5/hVuYMT2uHXwVYaS8x3khtbq1bUMaY5rVwME/JsRACPhdpSiR1wygKHDIFXvtsX01A==", "link"=>{"original_url"=>"asdas"}, "commit"=>"Shorten"}
+  [1m[36mLink Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "09fc283"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:17:in `block in lookup_code'
+  [1m[36mCACHE Link Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "09fc283"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  Rendering links/error.js.erb
+  Rendered links/error.js.erb (Duration: 20.8ms | Allocations: 254)
+Completed 200 OK in 29ms (Views: 22.2ms | ActiveRecord: 0.4ms | Allocations: 3325)
+
+
+Started GET "/" for 127.0.0.1 at 2021-04-23 22:58:06 +0200
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 3.1ms | Allocations: 797)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 44ms (Views: 28.9ms | ActiveRecord: 0.7ms | Allocations: 8336)
+
+
+Started POST "/links" for 127.0.0.1 at 2021-04-23 22:58:09 +0200
+Processing by LinksController#create as JS
+  Parameters: {"authenticity_token"=>"FCFUubVDRbmkFxrKzhbsYzETRocpXWfXO8qljEXCjh2UMDqVvESWCSkS2sna8TZ8UumEBIPXkoatbGKQ7uP8Hw==", "link"=>{"original_url"=>"https://www.zauberware.com/en/articles/2019/create-a-url-shortener-with-ruby-on-rails"}, "commit"=>"Shorten"}
+  [1m[36mLink Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "f127194"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:17:in `block in lookup_code'
+  [1m[36mCACHE Link Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "f127194"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  [1m[36mLink Create (0.4ms)[0m  [1m[32mINSERT INTO "links" ("lookup_code", "original_url", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["lookup_code", "f127194"], ["original_url", "https://www.zauberware.com/en/articles/2019/create-a-url-shortener-with-ruby-on-rails"], ["created_at", "2021-04-23 20:58:09.322559"], ["updated_at", "2021-04-23 20:58:09.322559"]]
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  [1m[35m (216.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  Rendering links/create.js.erb
+  Rendered links/_link.html.erb (Duration: 0.5ms | Allocations: 105)
+  Rendered links/create.js.erb (Duration: 2.1ms | Allocations: 430)
+Completed 200 OK in 237ms (Views: 5.9ms | ActiveRecord: 217.3ms | Allocations: 9185)
+
+
+Started GET "/f127194" for 127.0.0.1 at 2021-04-23 22:58:14 +0200
+Processing by LinksController#show as HTML
+  Parameters: {"lookup_code"=>"f127194"}
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "f127194"], ["LIMIT", 1]]
+  ↳ app/controllers/links_controller.rb:3:in `show'
+Redirected to https://www.zauberware.com/en/articles/2019/create-a-url-shortener-with-ruby-on-rails
+Completed 302 Found in 4ms (ActiveRecord: 0.3ms | Allocations: 1248)
+
+
+Started POST "/links" for 127.0.0.1 at 2021-04-23 22:58:28 +0200
+Processing by LinksController#create as JS
+  Parameters: {"authenticity_token"=>"FCFUubVDRbmkFxrKzhbsYzETRocpXWfXO8qljEXCjh2UMDqVvESWCSkS2sna8TZ8UumEBIPXkoatbGKQ7uP8Hw==", "link"=>{"original_url"=>"dasdas"}, "commit"=>"Shorten"}
+  [1m[36mLink Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "6509cdd"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:17:in `block in lookup_code'
+  [1m[36mCACHE Link Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "6509cdd"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  Rendering links/error.js.erb
+  Rendered links/error.js.erb (Duration: 33.3ms | Allocations: 1369)
+Completed 200 OK in 39ms (Views: 34.5ms | ActiveRecord: 0.2ms | Allocations: 4475)
+
+
+Started POST "/links" for 127.0.0.1 at 2021-04-23 22:59:11 +0200
+Processing by LinksController#create as JS
+  Parameters: {"authenticity_token"=>"FCFUubVDRbmkFxrKzhbsYzETRocpXWfXO8qljEXCjh2UMDqVvESWCSkS2sna8TZ8UumEBIPXkoatbGKQ7uP8Hw==", "link"=>{"original_url"=>"http://localhost:3000/"}, "commit"=>"Shorten"}
+  [1m[36mLink Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "058884d"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:17:in `block in lookup_code'
+  [1m[36mCACHE Link Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "058884d"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  [1m[36mLink Create (0.3ms)[0m  [1m[32mINSERT INTO "links" ("lookup_code", "original_url", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["lookup_code", "058884d"], ["original_url", "http://localhost:3000/"], ["created_at", "2021-04-23 20:59:11.908414"], ["updated_at", "2021-04-23 20:59:11.908414"]]
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  [1m[35m (77.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  Rendering links/create.js.erb
+  Rendered links/_link.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered links/create.js.erb (Duration: 0.4ms | Allocations: 92)
+Completed 200 OK in 104ms (Views: 1.1ms | ActiveRecord: 78.2ms | Allocations: 6716)
+
+
+Started GET "/058884d" for 127.0.0.1 at 2021-04-23 22:59:15 +0200
+Processing by LinksController#show as HTML
+  Parameters: {"lookup_code"=>"058884d"}
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "058884d"], ["LIMIT", 1]]
+  ↳ app/controllers/links_controller.rb:3:in `show'
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms | Allocations: 1084)
+
+
+Started GET "/" for 127.0.0.1 at 2021-04-23 22:59:15 +0200
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 277)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 5.1ms | ActiveRecord: 0.0ms | Allocations: 2661)
+
+
+Started POST "/links" for 127.0.0.1 at 2021-04-23 22:59:22 +0200
+Processing by LinksController#create as JS
+  Parameters: {"authenticity_token"=>"FCFUubVDRbmkFxrKzhbsYzETRocpXWfXO8qljEXCjh2UMDqVvESWCSkS2sna8TZ8UumEBIPXkoatbGKQ7uP8Hw==", "link"=>{"original_url"=>"file:///home/omar/cart/figwe-frontend-alpine/public/manage-status.html"}, "commit"=>"Shorten"}
+  [1m[36mLink Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "7ccd6ad"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:17:in `block in lookup_code'
+  [1m[36mCACHE Link Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "7ccd6ad"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  [1m[36mLink Create (0.4ms)[0m  [1m[32mINSERT INTO "links" ("lookup_code", "original_url", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["lookup_code", "7ccd6ad"], ["original_url", "file:///home/omar/cart/figwe-frontend-alpine/public/manage-status.html"], ["created_at", "2021-04-23 20:59:22.294041"], ["updated_at", "2021-04-23 20:59:22.294041"]]
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  [1m[35m (80.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  Rendering links/create.js.erb
+  Rendered links/_link.html.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered links/create.js.erb (Duration: 0.4ms | Allocations: 91)
+Completed 200 OK in 96ms (Views: 1.0ms | ActiveRecord: 80.8ms | Allocations: 6688)
+
+
+Started GET "/7ccd6ad" for 127.0.0.1 at 2021-04-23 22:59:26 +0200
+Processing by LinksController#show as HTML
+  Parameters: {"lookup_code"=>"7ccd6ad"}
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "7ccd6ad"], ["LIMIT", 1]]
+  ↳ app/controllers/links_controller.rb:3:in `show'
+Redirected to file:///home/omar/cart/figwe-frontend-alpine/public/manage-status.html
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms | Allocations: 1085)
+
+
+Started GET "/7ccd6ad" for 127.0.0.1 at 2021-04-23 22:59:27 +0200
+Processing by LinksController#show as HTML
+  Parameters: {"lookup_code"=>"7ccd6ad"}
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "7ccd6ad"], ["LIMIT", 1]]
+  ↳ app/controllers/links_controller.rb:3:in `show'
+Redirected to file:///home/omar/cart/figwe-frontend-alpine/public/manage-status.html
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms | Allocations: 1067)
+
+
+Started POST "/links" for 127.0.0.1 at 2021-04-23 23:02:15 +0200
+Processing by LinksController#create as JS
+  Parameters: {"authenticity_token"=>"FCFUubVDRbmkFxrKzhbsYzETRocpXWfXO8qljEXCjh2UMDqVvESWCSkS2sna8TZ8UumEBIPXkoatbGKQ7uP8Hw==", "link"=>{"original_url"=>"https://www.google.com/search?q=apple&sxsrf=ALeKk00Y_HiCfbkb552rylE71SwBNN-Vvg:1619211727600&source=lnms&tbm=isch&sa=X&ved=2ahUKEwilu9veoZXwAhWKaRUIHVbNBU4Q_AUoAXoECAIQAw&biw=1366&bih=595"}, "commit"=>"Shorten"}
+  [1m[36mLink Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "6cb435f"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:17:in `block in lookup_code'
+  [1m[36mCACHE Link Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "6cb435f"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  [1m[36mLink Create (0.4ms)[0m  [1m[32mINSERT INTO "links" ("lookup_code", "original_url", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["lookup_code", "6cb435f"], ["original_url", "https://www.google.com/search?q=apple&sxsrf=ALeKk00Y_HiCfbkb552rylE71SwBNN-Vvg:1619211727600&source=lnms&tbm=isch&sa=X&ved=2ahUKEwilu9veoZXwAhWKaRUIHVbNBU4Q_AUoAXoECAIQAw&biw=1366&bih=595"], ["created_at", "2021-04-23 21:02:15.050288"], ["updated_at", "2021-04-23 21:02:15.050288"]]
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  [1m[35m (144.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  Rendering links/create.js.erb
+  Rendered links/_link.html.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered links/create.js.erb (Duration: 0.9ms | Allocations: 91)
+Completed 200 OK in 162ms (Views: 2.4ms | ActiveRecord: 145.6ms | Allocations: 6797)
+
+
+Started POST "/links" for 127.0.0.1 at 2021-04-23 23:02:18 +0200
+Processing by LinksController#create as JS
+  Parameters: {"authenticity_token"=>"FCFUubVDRbmkFxrKzhbsYzETRocpXWfXO8qljEXCjh2UMDqVvESWCSkS2sna8TZ8UumEBIPXkoatbGKQ7uP8Hw==", "link"=>{"original_url"=>"https://www.google.com/search?q=apple&sxsrf=ALeKk00Y_HiCfbkb552rylE71SwBNN-Vvg:1619211727600&source=lnms&tbm=isch&sa=X&ved=2ahUKEwilu9veoZXwAhWKaRUIHVbNBU4Q_AUoAXoECAIQAw&biw=1366&bih=595"}, "commit"=>"Shorten"}
+  [1m[36mLink Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "c000563"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:17:in `block in lookup_code'
+  [1m[36mCACHE Link Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "c000563"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  [1m[36mLink Create (0.3ms)[0m  [1m[32mINSERT INTO "links" ("lookup_code", "original_url", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["lookup_code", "c000563"], ["original_url", "https://www.google.com/search?q=apple&sxsrf=ALeKk00Y_HiCfbkb552rylE71SwBNN-Vvg:1619211727600&source=lnms&tbm=isch&sa=X&ved=2ahUKEwilu9veoZXwAhWKaRUIHVbNBU4Q_AUoAXoECAIQAw&biw=1366&bih=595"], ["created_at", "2021-04-23 21:02:18.023352"], ["updated_at", "2021-04-23 21:02:18.023352"]]
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  [1m[35m (84.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  Rendering links/create.js.erb
+  Rendered links/_link.html.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered links/create.js.erb (Duration: 0.4ms | Allocations: 91)
+Completed 200 OK in 99ms (Views: 1.0ms | ActiveRecord: 85.2ms | Allocations: 6698)
+
+
+Started GET "/c000563" for 127.0.0.1 at 2021-04-23 23:02:22 +0200
+Processing by LinksController#show as HTML
+  Parameters: {"lookup_code"=>"c000563"}
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "c000563"], ["LIMIT", 1]]
+  ↳ app/controllers/links_controller.rb:3:in `show'
+Redirected to https://www.google.com/search?q=apple&sxsrf=ALeKk00Y_HiCfbkb552rylE71SwBNN-Vvg:1619211727600&source=lnms&tbm=isch&sa=X&ved=2ahUKEwilu9veoZXwAhWKaRUIHVbNBU4Q_AUoAXoECAIQAw&biw=1366&bih=595
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms | Allocations: 1068)
+
+
+Started POST "/links" for 127.0.0.1 at 2021-04-23 23:05:47 +0200
+Processing by LinksController#create as JS
+  Parameters: {"authenticity_token"=>"FCFUubVDRbmkFxrKzhbsYzETRocpXWfXO8qljEXCjh2UMDqVvESWCSkS2sna8TZ8UumEBIPXkoatbGKQ7uP8Hw==", "link"=>{"original_url"=>"dasdasd"}, "commit"=>"Shorten"}
+  [1m[36mLink Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "bef0ce8"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:17:in `block in lookup_code'
+  [1m[36mCACHE Link Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "bef0ce8"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  Rendering links/error.js.erb
+  Rendered links/_invalid.html.erb (Duration: 0.3ms | Allocations: 106)
+  Rendered links/error.js.erb (Duration: 2.0ms | Allocations: 770)
+Completed 200 OK in 12ms (Views: 5.5ms | ActiveRecord: 0.4ms | Allocations: 4858)
+
+
+Started GET "/" for 127.0.0.1 at 2021-04-23 23:05:49 +0200
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 444)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 7.9ms | ActiveRecord: 0.0ms | Allocations: 3715)
+
+
+Started POST "/links" for 127.0.0.1 at 2021-04-23 23:05:51 +0200
+Processing by LinksController#create as JS
+  Parameters: {"authenticity_token"=>"sPRPq4KboKG+chcvARiVngVGu/SqhypfcfGdTPvQpY4w5SGHi5xzETN31ywV/0+BZrx5dwAN3w7nV1pQUPHXjA==", "link"=>{"original_url"=>"dasasd"}, "commit"=>"Shorten"}
+  [1m[36mLink Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "1ba2c3f"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:17:in `block in lookup_code'
+  [1m[36mCACHE Link Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "1ba2c3f"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  Rendering links/error.js.erb
+  Rendered links/_invalid.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered links/error.js.erb (Duration: 0.8ms | Allocations: 383)
+Completed 200 OK in 7ms (Views: 1.4ms | ActiveRecord: 0.2ms | Allocations: 3282)
+
+
+Started GET "/" for 127.0.0.1 at 2021-04-23 23:06:25 +0200
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 444)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 16ms (Views: 14.2ms | ActiveRecord: 0.0ms | Allocations: 3732)
+
+
+Started POST "/links" for 127.0.0.1 at 2021-04-23 23:06:26 +0200
+Processing by LinksController#create as JS
+  Parameters: {"authenticity_token"=>"CFnsUTvdMgFBg5LsMXpx1F5DyLyGm6k/wsp61uf/4hiISIJ9MtrhscyGUu8lnavLPbkKPywRXG5UbL3KTN6QGg==", "link"=>{"original_url"=>"http://localhost:3000/"}, "commit"=>"Shorten"}
+  [1m[36mLink Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "45aa584"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:17:in `block in lookup_code'
+  [1m[36mCACHE Link Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "45aa584"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  [1m[36mLink Create (0.3ms)[0m  [1m[32mINSERT INTO "links" ("lookup_code", "original_url", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["lookup_code", "45aa584"], ["original_url", "http://localhost:3000/"], ["created_at", "2021-04-23 21:06:26.765489"], ["updated_at", "2021-04-23 21:06:26.765489"]]
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  [1m[35m (586.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  Rendering links/create.js.erb
+  Rendered links/_link.html.erb (Duration: 0.3ms | Allocations: 103)
+  Rendered links/create.js.erb (Duration: 1.3ms | Allocations: 419)
+Completed 200 OK in 600ms (Views: 3.3ms | ActiveRecord: 586.8ms | Allocations: 8496)
+
+
+Started POST "/links" for 127.0.0.1 at 2021-04-23 23:06:30 +0200
+Processing by LinksController#create as JS
+  Parameters: {"authenticity_token"=>"CFnsUTvdMgFBg5LsMXpx1F5DyLyGm6k/wsp61uf/4hiISIJ9MtrhscyGUu8lnavLPbkKPywRXG5UbL3KTN6QGg==", "link"=>{"original_url"=>"dasds"}, "commit"=>"Shorten"}
+  [1m[36mLink Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "e6b29cf"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:17:in `block in lookup_code'
+  [1m[36mCACHE Link Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "e6b29cf"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  Rendering links/error.js.erb
+  Rendered links/_invalid.html.erb (Duration: 0.3ms | Allocations: 102)
+  Rendered links/error.js.erb (Duration: 1.7ms | Allocations: 762)
+Completed 200 OK in 7ms (Views: 2.6ms | ActiveRecord: 0.2ms | Allocations: 3843)
+
+
+Started POST "/links" for 127.0.0.1 at 2021-04-23 23:06:53 +0200
+Processing by LinksController#create as JS
+  Parameters: {"authenticity_token"=>"CFnsUTvdMgFBg5LsMXpx1F5DyLyGm6k/wsp61uf/4hiISIJ9MtrhscyGUu8lnavLPbkKPywRXG5UbL3KTN6QGg==", "link"=>{"original_url"=>"dasds"}, "commit"=>"Shorten"}
+  [1m[36mLink Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "6ed5b36"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:17:in `block in lookup_code'
+  [1m[36mCACHE Link Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "6ed5b36"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  Rendering links/error.js.erb
+  Rendered links/_invalid.html.erb (Duration: 0.3ms | Allocations: 102)
+  Rendered links/error.js.erb (Duration: 2.0ms | Allocations: 761)
+Completed 200 OK in 11ms (Views: 4.8ms | ActiveRecord: 0.2ms | Allocations: 4837)
+
+
+Started POST "/links" for 127.0.0.1 at 2021-04-23 23:07:09 +0200
+Processing by LinksController#create as JS
+  Parameters: {"authenticity_token"=>"CFnsUTvdMgFBg5LsMXpx1F5DyLyGm6k/wsp61uf/4hiISIJ9MtrhscyGUu8lnavLPbkKPywRXG5UbL3KTN6QGg==", "link"=>{"original_url"=>"dasds"}, "commit"=>"Shorten"}
+  [1m[36mLink Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "e4eabcc"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:17:in `block in lookup_code'
+  [1m[36mCACHE Link Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "e4eabcc"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  Rendering links/error.js.erb
+  Rendered links/_invalid.html.erb (Duration: 0.4ms | Allocations: 102)
+  Rendered links/error.js.erb (Duration: 1.9ms | Allocations: 760)
+Completed 200 OK in 12ms (Views: 4.4ms | ActiveRecord: 0.4ms | Allocations: 4837)
+
+
+Started GET "/" for 127.0.0.1 at 2021-04-23 23:07:10 +0200
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 444)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 8.5ms | ActiveRecord: 0.0ms | Allocations: 3719)
+
+
+Started POST "/links" for 127.0.0.1 at 2021-04-23 23:07:12 +0200
+Processing by LinksController#create as JS
+  Parameters: {"authenticity_token"=>"Hu7lwke+mE+srCbHyimJoewaACBtzBrANHPNucoKOKWe/4vuTrlL/yGp5sTezlO+j+DCo8dG75Gi1QqlYStKpw==", "link"=>{"original_url"=>"sadasd"}, "commit"=>"Shorten"}
+  [1m[36mLink Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "bc513fc"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:17:in `block in lookup_code'
+  [1m[36mCACHE Link Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "bc513fc"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  Rendering links/error.js.erb
+  Rendered links/_invalid.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered links/error.js.erb (Duration: 0.7ms | Allocations: 383)
+Completed 200 OK in 7ms (Views: 1.3ms | ActiveRecord: 0.3ms | Allocations: 3299)
+
+
+Started GET "/" for 127.0.0.1 at 2021-04-23 23:07:28 +0200
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 444)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 8.7ms | ActiveRecord: 0.0ms | Allocations: 3724)
+
+
+Started POST "/links" for 127.0.0.1 at 2021-04-23 23:07:30 +0200
+Processing by LinksController#create as JS
+  Parameters: {"authenticity_token"=>"0rGE6oi09+Qoaa0PjqNp2BcV2DugwexGyISyiAie7wdSoOrGgbMkVKVsbQyaRLPHdO8auApLGRdeInWUo7+dBQ==", "link"=>{"original_url"=>"http://localhost:3000/"}, "commit"=>"Shorten"}
+  [1m[36mLink Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "15212c9"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:17:in `block in lookup_code'
+  [1m[36mCACHE Link Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "15212c9"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  [1m[36mLink Create (0.4ms)[0m  [1m[32mINSERT INTO "links" ("lookup_code", "original_url", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["lookup_code", "15212c9"], ["original_url", "http://localhost:3000/"], ["created_at", "2021-04-23 21:07:30.509665"], ["updated_at", "2021-04-23 21:07:30.509665"]]
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  [1m[35m (159.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  Rendering links/create.js.erb
+  Rendered links/_link.html.erb (Duration: 0.3ms | Allocations: 102)
+  Rendered links/create.js.erb (Duration: 1.3ms | Allocations: 416)
+Completed 200 OK in 179ms (Views: 6.3ms | ActiveRecord: 160.3ms | Allocations: 8460)
+
+
+Started POST "/links" for 127.0.0.1 at 2021-04-23 23:07:33 +0200
+Processing by LinksController#create as JS
+  Parameters: {"authenticity_token"=>"0rGE6oi09+Qoaa0PjqNp2BcV2DugwexGyISyiAie7wdSoOrGgbMkVKVsbQyaRLPHdO8auApLGRdeInWUo7+dBQ==", "link"=>{"original_url"=>"dasda"}, "commit"=>"Shorten"}
+  [1m[36mLink Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "677afaf"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:17:in `block in lookup_code'
+  [1m[36mCACHE Link Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "677afaf"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  Rendering links/error.js.erb
+  Rendered links/_invalid.html.erb (Duration: 0.3ms | Allocations: 103)
+  Rendered links/error.js.erb (Duration: 2.0ms | Allocations: 761)
+Completed 200 OK in 10ms (Views: 3.0ms | ActiveRecord: 0.3ms | Allocations: 3838)
+
+
+Started POST "/links" for 127.0.0.1 at 2021-04-23 23:08:14 +0200
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by LinksController#create as JS
+  Parameters: {"authenticity_token"=>"0rGE6oi09+Qoaa0PjqNp2BcV2DugwexGyISyiAie7wdSoOrGgbMkVKVsbQyaRLPHdO8auApLGRdeInWUo7+dBQ==", "link"=>{"original_url"=>"dasda"}, "commit"=>"Shorten"}
+  [1m[36mLink Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "92a14fa"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:17:in `block in lookup_code'
+  [1m[36mCACHE Link Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "92a14fa"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 1.1ms | Allocations: 9066)
+
+
+  
+NoMethodError (undefined method `Invalid URL format' for #<Link:0x00007f5280098f38>):
+  
+app/models/link.rb:9:in `original_url_format'
+app/services/shortener.rb:11:in `generata_short_link'
+app/controllers/links_controller.rb:9:in `create'
+Started GET "/" for 127.0.0.1 at 2021-04-23 23:08:16 +0200
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 338)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 6.9ms | ActiveRecord: 0.0ms | Allocations: 2902)
+
+
+Started POST "/links" for 127.0.0.1 at 2021-04-23 23:08:18 +0200
+Processing by LinksController#create as JS
+  Parameters: {"authenticity_token"=>"Pw4cof160k7R1FcJBrwyRcI4q/AnjcNX4QI6o9l8XwO/H3KN9H0B/lzRlwoSW+haocJpc40HNgZ3pP2/cl0tAQ==", "link"=>{"original_url"=>"sadasd"}, "commit"=>"Shorten"}
+  [1m[36mLink Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "28aa72b"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:17:in `block in lookup_code'
+  [1m[36mCACHE Link Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "28aa72b"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 0.3ms | Allocations: 5465)
+
+
+  
+NoMethodError (undefined method `Invalid URL format' for #<Link:0x0000556d5a66f4f0>):
+  
+app/models/link.rb:9:in `original_url_format'
+app/services/shortener.rb:11:in `generata_short_link'
+app/controllers/links_controller.rb:9:in `create'
+Started POST "/links" for 127.0.0.1 at 2021-04-23 23:08:24 +0200
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by LinksController#create as JS
+  Parameters: {"authenticity_token"=>"Pw4cof160k7R1FcJBrwyRcI4q/AnjcNX4QI6o9l8XwO/H3KN9H0B/lzRlwoSW+haocJpc40HNgZ3pP2/cl0tAQ==", "link"=>{"original_url"=>"sadasd"}, "commit"=>"Shorten"}
+  [1m[36mLink Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "294c163"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:17:in `block in lookup_code'
+  [1m[36mCACHE Link Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "294c163"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  Rendering links/error.js.erb
+  Rendered links/_invalid.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered links/error.js.erb (Duration: 1.0ms | Allocations: 442)
+Completed 200 OK in 19ms (Views: 1.9ms | ActiveRecord: 1.1ms | Allocations: 7050)
+
+
+Started POST "/links" for 127.0.0.1 at 2021-04-23 23:08:34 +0200
+Processing by LinksController#create as JS
+  Parameters: {"authenticity_token"=>"Pw4cof160k7R1FcJBrwyRcI4q/AnjcNX4QI6o9l8XwO/H3KN9H0B/lzRlwoSW+haocJpc40HNgZ3pP2/cl0tAQ==", "link"=>{"original_url"=>"sadasd"}, "commit"=>"Shorten"}
+  [1m[36mLink Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "fe8f187"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:17:in `block in lookup_code'
+  [1m[36mCACHE Link Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "fe8f187"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  Rendering links/error.js.erb
+  Rendered links/_invalid.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered links/error.js.erb (Duration: 1.0ms | Allocations: 382)
+Completed 200 OK in 8ms (Views: 1.8ms | ActiveRecord: 0.4ms | Allocations: 3280)
+
+
+Started POST "/links" for 127.0.0.1 at 2021-04-23 23:08:36 +0200
+Processing by LinksController#create as JS
+  Parameters: {"authenticity_token"=>"Pw4cof160k7R1FcJBrwyRcI4q/AnjcNX4QI6o9l8XwO/H3KN9H0B/lzRlwoSW+haocJpc40HNgZ3pP2/cl0tAQ==", "link"=>{"original_url"=>""}, "commit"=>"Shorten"}
+  [1m[36mLink Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "441ee81"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:17:in `block in lookup_code'
+  [1m[36mCACHE Link Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "441ee81"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  Rendering links/error.js.erb
+  Rendered links/_invalid.html.erb (Duration: 0.0ms | Allocations: 7)
+  Rendered links/error.js.erb (Duration: 1.6ms | Allocations: 662)
+Completed 200 OK in 10ms (Views: 2.3ms | ActiveRecord: 0.3ms | Allocations: 3915)
+
+
+Started POST "/links" for 127.0.0.1 at 2021-04-23 23:08:57 +0200
+Processing by LinksController#create as JS
+  Parameters: {"authenticity_token"=>"Pw4cof160k7R1FcJBrwyRcI4q/AnjcNX4QI6o9l8XwO/H3KN9H0B/lzRlwoSW+haocJpc40HNgZ3pP2/cl0tAQ==", "link"=>{"original_url"=>"http://localhost:3000/"}, "commit"=>"Shorten"}
+  [1m[36mLink Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "02222d0"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:17:in `block in lookup_code'
+  [1m[36mCACHE Link Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "02222d0"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  [1m[36mLink Create (0.5ms)[0m  [1m[32mINSERT INTO "links" ("lookup_code", "original_url", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["lookup_code", "02222d0"], ["original_url", "http://localhost:3000/"], ["created_at", "2021-04-23 21:08:57.063728"], ["updated_at", "2021-04-23 21:08:57.063728"]]
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  [1m[35m (110.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  Rendering links/create.js.erb
+  Rendered links/_link.html.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered links/create.js.erb (Duration: 0.3ms | Allocations: 91)
+Completed 200 OK in 126ms (Views: 0.9ms | ActiveRecord: 111.7ms | Allocations: 7024)
+
+
+Started GET "/02222d0" for 127.0.0.1 at 2021-04-23 23:09:00 +0200
+Processing by LinksController#show as HTML
+  Parameters: {"lookup_code"=>"02222d0"}
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "02222d0"], ["LIMIT", 1]]
+  ↳ app/controllers/links_controller.rb:3:in `show'
+Redirected to http://localhost:3000/
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms | Allocations: 1215)
+
+
+Started GET "/" for 127.0.0.1 at 2021-04-23 23:09:00 +0200
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 279)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 7.0ms | ActiveRecord: 0.0ms | Allocations: 2758)
+
+
+Started POST "/links" for 127.0.0.1 at 2021-04-23 23:12:31 +0200
+Processing by LinksController#create as JS
+  Parameters: {"authenticity_token"=>"Pw4cof160k7R1FcJBrwyRcI4q/AnjcNX4QI6o9l8XwO/H3KN9H0B/lzRlwoSW+haocJpc40HNgZ3pP2/cl0tAQ==", "link"=>{"original_url"=>"http://localhost:3000/"}, "commit"=>"Shorten"}
+  [1m[36mLink Exists? (15.0ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "c56f0ce"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:17:in `block in lookup_code'
+  [1m[36mCACHE Link Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "c56f0ce"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  [1m[36mLink Create (0.3ms)[0m  [1m[32mINSERT INTO "links" ("lookup_code", "original_url", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["lookup_code", "c56f0ce"], ["original_url", "http://localhost:3000/"], ["created_at", "2021-04-23 21:12:32.047897"], ["updated_at", "2021-04-23 21:12:32.047897"]]
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  [1m[35m (126.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  Rendering links/create.js.erb
+  Rendered links/create.js.erb (Duration: 528.2ms | Allocations: 125840)
+Completed 500 Internal Server Error in 688ms (ActiveRecord: 141.9ms | Allocations: 133581)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `text' for #<#<Class:0x00007f52840b7858>:0x00007f52840b56c0>
+Did you mean?  test):
+    1: var element = document.getElementById('short-link');
+    2: var html = "<%= j render 'link', link: text.gsub(URI.regexp, '@link.shortened_url') %>";
+    3: element.innerHTML = html;
+  
+app/views/links/create.js.erb:2
+Started GET "/" for 127.0.0.1 at 2021-04-23 23:12:33 +0200
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 451)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 12ms (Views: 10.4ms | ActiveRecord: 0.0ms | Allocations: 4184)
+
+
+Started POST "/links" for 127.0.0.1 at 2021-04-23 23:12:35 +0200
+Processing by LinksController#create as JS
+  Parameters: {"authenticity_token"=>"C5/AMOIaFRMid/UBg1QY94MbmJpIY00sG3FnXxKKG2KLjq4c6x3Go69yNQKXs8Lo4OFaGeLpuH2N16BDuatpYA==", "link"=>{"original_url"=>"http://localhost:3000/"}, "commit"=>"Shorten"}
+  [1m[36mLink Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "b5308d6"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:17:in `block in lookup_code'
+  [1m[36mCACHE Link Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "b5308d6"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  [1m[36mLink Create (0.5ms)[0m  [1m[32mINSERT INTO "links" ("lookup_code", "original_url", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["lookup_code", "b5308d6"], ["original_url", "http://localhost:3000/"], ["created_at", "2021-04-23 21:12:35.274246"], ["updated_at", "2021-04-23 21:12:35.274246"]]
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  [1m[35m (214.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  Rendering links/create.js.erb
+  Rendered links/create.js.erb (Duration: 209.1ms | Allocations: 125431)
+Completed 500 Internal Server Error in 441ms (ActiveRecord: 215.5ms | Allocations: 132331)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `text' for #<#<Class:0x00007f52840b7858>:0x00007f52847626a8>
+Did you mean?  test):
+    1: var element = document.getElementById('short-link');
+    2: var html = "<%= j render 'link', link: text.gsub(URI.regexp, '@link.shortened_url') %>";
+    3: element.innerHTML = html;
+  
+app/views/links/create.js.erb:2
+Started GET "/" for 127.0.0.1 at 2021-04-23 23:12:50 +0200
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 450)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 13ms (Views: 10.9ms | ActiveRecord: 0.0ms | Allocations: 3733)
+
+
+Started POST "/links" for 127.0.0.1 at 2021-04-23 23:12:52 +0200
+Processing by LinksController#create as JS
+  Parameters: {"authenticity_token"=>"lae7YiqYwcO71Z/1VT2bpZPV7J4nCWmlDG6RtSIGGmgVttVOI58SczbQX/ZB2kG68C8uHY2DnPSayFapiSdoag==", "link"=>{"original_url"=>"http://localhost:3000/"}, "commit"=>"Shorten"}
+  [1m[36mLink Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "b7bfc31"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:17:in `block in lookup_code'
+  [1m[36mCACHE Link Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "b7bfc31"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  [1m[36mLink Create (0.3ms)[0m  [1m[32mINSERT INTO "links" ("lookup_code", "original_url", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["lookup_code", "b7bfc31"], ["original_url", "http://localhost:3000/"], ["created_at", "2021-04-23 21:12:52.084313"], ["updated_at", "2021-04-23 21:12:52.084313"]]
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  [1m[35m (210.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  Rendering links/create.js.erb
+  Rendered links/create.js.erb (Duration: 219.8ms | Allocations: 125772)
+Completed 500 Internal Server Error in 445ms (ActiveRecord: 211.7ms | Allocations: 133649)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `text' for #<#<Class:0x00007f5284419398>:0x00007f5284403390>
+Did you mean?  test):
+    1: var element = document.getElementById('short-link');
+    2: var html = "<%= j render 'link', link: text.gsub(URI.regexp, @link.shortened_url) %>";
+    3: element.innerHTML = html;
+  
+app/views/links/create.js.erb:2
+Started GET "/" for 127.0.0.1 at 2021-04-23 23:13:35 +0200
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 450)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.0ms | Allocations: 3725)
+
+
+Started POST "/links" for 127.0.0.1 at 2021-04-23 23:13:36 +0200
+Processing by LinksController#create as JS
+  Parameters: {"authenticity_token"=>"fyuiUyKJyqwt6wY2W1cJ2kfeaCqfTlTXoFZ/apDA9jP/Osx/K44ZHKDuxjVPsNPFJCSqqTXEoYY28Lh2O+GEMQ==", "link"=>{"original_url"=>"http://localhost:3000/"}, "commit"=>"Shorten"}
+  [1m[36mLink Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "a9ca3f0"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:17:in `block in lookup_code'
+  [1m[36mCACHE Link Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "a9ca3f0"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  [1m[36mLink Create (1.0ms)[0m  [1m[32mINSERT INTO "links" ("lookup_code", "original_url", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["lookup_code", "a9ca3f0"], ["original_url", "http://localhost:3000/"], ["created_at", "2021-04-23 21:13:36.676924"], ["updated_at", "2021-04-23 21:13:36.676924"]]
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  [1m[35m (190.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  Rendering links/create.js.erb
+  Rendered links/_link.html.erb (Duration: 232.7ms | Allocations: 125680)
+  Rendered links/create.js.erb (Duration: 233.8ms | Allocations: 125976)
+Completed 500 Internal Server Error in 445ms (ActiveRecord: 191.6ms | Allocations: 134016)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `text' for #<#<Class:0x00007f52842ae1e8>:0x00007f528429ff80>
+Did you mean?  test):
+    1: <div class="card-footer">
+    2:     <div class="alert alert-success">
+    3:        <b>Shortened URL:</b> <%= text.gsub(URI.regexp, link ).html_safe%>
+    4:     </div>
+    5: </div>
+  
+app/views/links/_link.html.erb:3
+app/views/links/create.js.erb:2
+Started GET "/" for 127.0.0.1 at 2021-04-23 23:14:06 +0200
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 450)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 7.8ms | ActiveRecord: 0.0ms | Allocations: 3727)
+
+
+Started POST "/links" for 127.0.0.1 at 2021-04-23 23:14:08 +0200
+Processing by LinksController#create as JS
+  Parameters: {"authenticity_token"=>"k/AHv6xJfbdUSxtw8GbcyljgImvHh1Knl9weU/0KHWMT4WmTpU6uB9lO23PkgQbVOxrg6G0Np/YBetlPVitvYQ==", "link"=>{"original_url"=>"http://localhost:3000/"}, "commit"=>"Shorten"}
+  [1m[36mLink Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "6c35c71"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:17:in `block in lookup_code'
+  [1m[36mCACHE Link Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "6c35c71"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  [1m[36mLink Create (0.3ms)[0m  [1m[32mINSERT INTO "links" ("lookup_code", "original_url", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["lookup_code", "6c35c71"], ["original_url", "http://localhost:3000/"], ["created_at", "2021-04-23 21:14:08.117684"], ["updated_at", "2021-04-23 21:14:08.117684"]]
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  [1m[35m (197.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  Rendering links/create.js.erb
+  Rendered links/_link.html.erb (Duration: 0.4ms | Allocations: 107)
+  Rendered links/create.js.erb (Duration: 1.6ms | Allocations: 421)
+Completed 200 OK in 215ms (Views: 4.3ms | ActiveRecord: 198.5ms | Allocations: 8479)
+
+
+Started GET "/" for 127.0.0.1 at 2021-04-23 23:16:40 +0200
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 20.6ms | Allocations: 447)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 283ms (Views: 255.3ms | ActiveRecord: 0.0ms | Allocations: 3731)
+
+
+Started POST "/links" for 127.0.0.1 at 2021-04-23 23:16:42 +0200
+Processing by LinksController#create as JS
+  Parameters: {"authenticity_token"=>"8Zxq7NDCcrqKTKPXNo9fByM4HQO9sEnKx0d2Hp5CNh5xjQTA2cWhCgdJY9QiaIUYQMLfgBc6vJtR4bECNWNEHA==", "link"=>{"original_url"=>"http://localhost:3000/"}, "commit"=>"Shorten"}
+  [1m[36mLink Exists? (78.4ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "36ac74c"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:17:in `block in lookup_code'
+  [1m[36mCACHE Link Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "36ac74c"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  [1m[36mLink Create (68.4ms)[0m  [1m[32mINSERT INTO "links" ("lookup_code", "original_url", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["lookup_code", "36ac74c"], ["original_url", "http://localhost:3000/"], ["created_at", "2021-04-23 21:16:43.034879"], ["updated_at", "2021-04-23 21:16:43.034879"]]
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  [1m[35m (139.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  Rendering links/create.js.erb
+  Rendered links/_link.html.erb (Duration: 136.1ms | Allocations: 64813)
+  Rendered links/create.js.erb (Duration: 148.4ms | Allocations: 65146)
+Completed 500 Internal Server Error in 453ms (ActiveRecord: 286.0ms | Allocations: 73070)
+
+
+  
+ActionView::Template::Error (undefined method `auto_link' for #<#<Class:0x00007f5284c38268>:0x00007f5284c2a028>
+Did you mean?  autoload):
+    1: <div class="card-footer">
+    2:     <div class="alert alert-success">
+    3:        <b>Shortened URL:</b> <%= auto_link(link) %>
+    4:     </div>
+    5: </div>
+  
+app/views/links/_link.html.erb:3
+app/views/links/create.js.erb:2
+Started GET "/" for 127.0.0.1 at 2021-04-23 23:22:10 +0200
+Started GET "/" for 127.0.0.1 at 2021-04-23 23:22:10 +0200
+Started GET "/" for 127.0.0.1 at 2021-04-23 23:22:10 +0200
+  [1m[35m (11.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+Processing by HomeController#index as HTML
+Processing by HomeController#index as HTML
+Started GET "/" for 127.0.0.1 at 2021-04-23 23:22:10 +0200
+  Rendering home/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendering home/index.html.erb within layouts/application
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 20.9ms | Allocations: 2733)
+  Rendered home/index.html.erb within layouts/application (Duration: 12.4ms | Allocations: 992)
+  Rendered home/index.html.erb within layouts/application (Duration: 11.3ms | Allocations: 1287)
+  Rendered home/index.html.erb within layouts/application (Duration: 12.7ms | Allocations: 1579)
+Started GET "/" for 127.0.0.1 at 2021-04-23 23:22:10 +0200
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 276)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 86ms (Views: 85.6ms | ActiveRecord: 0.0ms | Allocations: 4322)
+
+
+Completed 200 OK in 156ms (Views: 153.7ms | ActiveRecord: 0.0ms | Allocations: 15133)
+
+
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 147ms (Views: 145.4ms | ActiveRecord: 0.0ms | Allocations: 13436)
+
+
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 181ms (Views: 178.7ms | ActiveRecord: 0.0ms | Allocations: 18260)
+
+
+Completed 200 OK in 247ms (Views: 185.6ms | ActiveRecord: 0.8ms | Allocations: 23778)
+
+
+Started GET "/" for 127.0.0.1 at 2021-04-23 23:22:10 +0200
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 269)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 6ms (Views: 4.5ms | ActiveRecord: 0.0ms | Allocations: 2641)
+
+
+Started POST "/links" for 127.0.0.1 at 2021-04-23 23:22:13 +0200
+Processing by LinksController#create as JS
+  Parameters: {"authenticity_token"=>"V3b/bB5xcd+/H1u8JXT0EkBHLPA4vdJg6GfBmCIow4HXZ5FAF3aibzIam78xky4NI73uc5I3JzF+wQaEiQmxgw==", "link"=>{"original_url"=>"http://localhost:3000/"}, "commit"=>"Shorten"}
+  [1m[36mLink Exists? (17.5ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "fd127fb"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:17:in `block in lookup_code'
+  [1m[36mCACHE Link Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "fd127fb"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  [1m[36mLink Create (1.0ms)[0m  [1m[32mINSERT INTO "links" ("lookup_code", "original_url", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["lookup_code", "fd127fb"], ["original_url", "http://localhost:3000/"], ["created_at", "2021-04-23 21:22:13.329155"], ["updated_at", "2021-04-23 21:22:13.329155"]]
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  [1m[35m (104.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  Rendering links/create.js.erb
+  Rendered links/_link.html.erb (Duration: 0.8ms | Allocations: 470)
+  Rendered links/create.js.erb (Duration: 12.6ms | Allocations: 799)
+Completed 200 OK in 232ms (Views: 14.6ms | ActiveRecord: 122.6ms | Allocations: 9543)
+
+
+Started GET "/links" for 127.0.0.1 at 2021-04-23 23:22:16 +0200
+Processing by LinksController#show as HTML
+  Parameters: {"lookup_code"=>"links"}
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "links"], ["LIMIT", 1]]
+  ↳ app/controllers/links_controller.rb:3:in `show'
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.3ms | Allocations: 2002)
+
+
+  
+NoMethodError (undefined method `original_url' for nil:NilClass):
+  
+app/controllers/links_controller.rb:4:in `show'
+Started GET "/" for 127.0.0.1 at 2021-04-23 23:22:19 +0200
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 281)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 7.0ms | ActiveRecord: 0.0ms | Allocations: 2686)
+
+
+Started POST "/links" for 127.0.0.1 at 2021-04-23 23:22:22 +0200
+Processing by LinksController#create as JS
+  Parameters: {"authenticity_token"=>"jj8f5aYbB231qdCtl5vhhkHCqwSFoJxNbq0DtRxgbhUOLnHJrxzU3XisEK6DfDuZIjhphy8qaRz4C8Spt0EcFw==", "link"=>{"original_url"=>"http://localhost:3000/"}, "commit"=>"Shorten"}
+  [1m[36mLink Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "43e8891"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:17:in `block in lookup_code'
+  [1m[36mCACHE Link Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "43e8891"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  [1m[36mLink Create (0.4ms)[0m  [1m[32mINSERT INTO "links" ("lookup_code", "original_url", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["lookup_code", "43e8891"], ["original_url", "http://localhost:3000/"], ["created_at", "2021-04-23 21:22:22.231821"], ["updated_at", "2021-04-23 21:22:22.231821"]]
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  [1m[35m (247.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  Rendering links/create.js.erb
+  Rendered links/_link.html.erb (Duration: 0.4ms | Allocations: 76)
+  Rendered links/create.js.erb (Duration: 0.9ms | Allocations: 162)
+Completed 200 OK in 264ms (Views: 2.7ms | ActiveRecord: 248.2ms | Allocations: 6907)
+
+
+Started GET "/" for 127.0.0.1 at 2021-04-23 23:22:47 +0200
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 444)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 6.6ms | ActiveRecord: 0.0ms | Allocations: 3735)
+
+
+Started POST "/links" for 127.0.0.1 at 2021-04-23 23:22:48 +0200
+Processing by LinksController#create as JS
+  Parameters: {"authenticity_token"=>"dY9fKBrUkQW04kKBhj14tgwmjHO8eWLFd2vvL5DMSt/1njEEE9NCtTnngoKS2qKpb9xO8Bbzl5ThzSgzO+043Q==", "link"=>{"original_url"=>"http://localhost:3000/"}, "commit"=>"Shorten"}
+  [1m[36mLink Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "0eb4d78"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:17:in `block in lookup_code'
+  [1m[36mCACHE Link Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "0eb4d78"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  [1m[36mLink Create (0.4ms)[0m  [1m[32mINSERT INTO "links" ("lookup_code", "original_url", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["lookup_code", "0eb4d78"], ["original_url", "http://localhost:3000/"], ["created_at", "2021-04-23 21:22:48.547531"], ["updated_at", "2021-04-23 21:22:48.547531"]]
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  [1m[35m (193.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  Rendering links/create.js.erb
+  Rendered links/_link.html.erb (Duration: 126.2ms | Allocations: 64659)
+  Rendered links/create.js.erb (Duration: 127.5ms | Allocations: 64955)
+Completed 500 Internal Server Error in 340ms (ActiveRecord: 194.2ms | Allocations: 73014)
+
+
+  
+ActionView::Template::Error (undefined method `auto_link' for #<#<Class:0x00007f1b405f7550>:0x00007f1b405f50c0>
+Did you mean?  autoload):
+    1: <div class="card-footer">
+    2:     <div class="alert alert-success">
+    3:        <b>Shortened URL:</b> <%= auto_link(link) %>
+    4:     </div>
+    5: </div>
+  
+app/views/links/_link.html.erb:3
+app/views/links/create.js.erb:2
+Started GET "/" for 127.0.0.1 at 2021-04-23 23:23:40 +0200
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 450)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 8.1ms | ActiveRecord: 0.0ms | Allocations: 3739)
+
+
+Started POST "/links" for 127.0.0.1 at 2021-04-23 23:23:42 +0200
+Processing by LinksController#create as JS
+  Parameters: {"authenticity_token"=>"deovLt3YHkNtAvPCG++Cjr5dFpYn2PFfPJMDQnpK+NL1+0EC1N/N8+AHM8EPCFiR3afUFY1SBA6qNcRe0WuK0A==", "link"=>{"original_url"=>"http://localhost:3000/"}, "commit"=>"Shorten"}
+  [1m[36mLink Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "04530f8"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:17:in `block in lookup_code'
+  [1m[36mCACHE Link Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "04530f8"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  [1m[36mLink Create (0.3ms)[0m  [1m[32mINSERT INTO "links" ("lookup_code", "original_url", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["lookup_code", "04530f8"], ["original_url", "http://localhost:3000/"], ["created_at", "2021-04-23 21:23:42.713550"], ["updated_at", "2021-04-23 21:23:42.713550"]]
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  [1m[35m (219.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  Rendering links/create.js.erb
+  Rendered links/_link.html.erb (Duration: 0.4ms | Allocations: 114)
+  Rendered links/create.js.erb (Duration: 1.4ms | Allocations: 431)
+Completed 200 OK in 236ms (Views: 3.8ms | ActiveRecord: 220.5ms | Allocations: 8291)
+
+
+Started GET "/04530f8" for 127.0.0.1 at 2021-04-23 23:23:45 +0200
+Processing by LinksController#show as HTML
+  Parameters: {"lookup_code"=>"04530f8"}
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "04530f8"], ["LIMIT", 1]]
+  ↳ app/controllers/links_controller.rb:3:in `show'
+Redirected to http://localhost:3000/
+Completed 302 Found in 4ms (ActiveRecord: 0.2ms | Allocations: 1115)
+
+
+Started GET "/" for 127.0.0.1 at 2021-04-23 23:23:45 +0200
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 277)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 6ms (Views: 4.7ms | ActiveRecord: 0.0ms | Allocations: 2678)
+
+
+Started POST "/links" for 127.0.0.1 at 2021-04-23 23:23:51 +0200
+Processing by LinksController#create as JS
+  Parameters: {"authenticity_token"=>"USCnvLwp4vMAqBm510M2idtg3PAkBa95PkGy6ONBeDbrLHzcJtl9CjPAVy7sCaHxvqWcb6kwLQKu+vVp59MHyQ==", "link"=>{"original_url"=>"https://www.google.com/search?q=apple&sxsrf=ALeKk00Y_HiCfbkb552rylE71SwBNN-Vvg:1619211727600&source=lnms&tbm=isch&sa=X&ved=2ahUKEwilu9veoZXwAhWKaRUIHVbNBU4Q_AUoAXoECAIQAw&biw=1366&bih=595"}, "commit"=>"Shorten"}
+  [1m[36mLink Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "ec790ba"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:17:in `block in lookup_code'
+  [1m[36mCACHE Link Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "ec790ba"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  [1m[36mLink Create (0.5ms)[0m  [1m[32mINSERT INTO "links" ("lookup_code", "original_url", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["lookup_code", "ec790ba"], ["original_url", "https://www.google.com/search?q=apple&sxsrf=ALeKk00Y_HiCfbkb552rylE71SwBNN-Vvg:1619211727600&source=lnms&tbm=isch&sa=X&ved=2ahUKEwilu9veoZXwAhWKaRUIHVbNBU4Q_AUoAXoECAIQAw&biw=1366&bih=595"], ["created_at", "2021-04-23 21:23:51.726206"], ["updated_at", "2021-04-23 21:23:51.726206"]]
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  [1m[35m (200.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  Rendering links/create.js.erb
+  Rendered links/_link.html.erb (Duration: 0.1ms | Allocations: 19)
+  Rendered links/create.js.erb (Duration: 0.6ms | Allocations: 105)
+Completed 200 OK in 218ms (Views: 1.8ms | ActiveRecord: 201.4ms | Allocations: 7047)
+
+
+Started GET "/ec790ba" for 127.0.0.1 at 2021-04-23 23:23:54 +0200
+Processing by LinksController#show as HTML
+  Parameters: {"lookup_code"=>"ec790ba"}
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "ec790ba"], ["LIMIT", 1]]
+  ↳ app/controllers/links_controller.rb:3:in `show'
+Redirected to https://www.google.com/search?q=apple&sxsrf=ALeKk00Y_HiCfbkb552rylE71SwBNN-Vvg:1619211727600&source=lnms&tbm=isch&sa=X&ved=2ahUKEwilu9veoZXwAhWKaRUIHVbNBU4Q_AUoAXoECAIQAw&biw=1366&bih=595
+Completed 302 Found in 4ms (ActiveRecord: 0.3ms | Allocations: 1078)
+
+
+Started GET "/ec790ba" for 127.0.0.1 at 2021-04-23 23:23:55 +0200
+Processing by LinksController#show as HTML
+  Parameters: {"lookup_code"=>"ec790ba"}
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "ec790ba"], ["LIMIT", 1]]
+  ↳ app/controllers/links_controller.rb:3:in `show'
+Redirected to https://www.google.com/search?q=apple&sxsrf=ALeKk00Y_HiCfbkb552rylE71SwBNN-Vvg:1619211727600&source=lnms&tbm=isch&sa=X&ved=2ahUKEwilu9veoZXwAhWKaRUIHVbNBU4Q_AUoAXoECAIQAw&biw=1366&bih=595
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms | Allocations: 1106)
+
+
+Started POST "/links" for 127.0.0.1 at 2021-04-23 23:23:58 +0200
+Processing by LinksController#create as JS
+  Parameters: {"authenticity_token"=>"lGE1SUu98CjC7Ih5yC5/OoEV9raEesCbS24+Oqa3d2wUcFtlQrojmE/pSHrcyaUl4u80NS7wNcrdyPkmDZYFbg==", "link"=>{"original_url"=>"https://www.google.com/search?q=apple&sxsrf=ALeKk00Y_HiCfbkb552rylE71SwBNN-Vvg:1619211727600&source=lnms&tbm=isch&sa=X&ved=2ahUKEwilu9veoZXwAhWKaRUIHVbNBU4Q_AUoAXoECAIQAw&biw=1366&bih=595"}, "commit"=>"Shorten"}
+  [1m[36mLink Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "8082272"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:17:in `block in lookup_code'
+  [1m[36mCACHE Link Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "8082272"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  [1m[36mLink Create (0.4ms)[0m  [1m[32mINSERT INTO "links" ("lookup_code", "original_url", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["lookup_code", "8082272"], ["original_url", "https://www.google.com/search?q=apple&sxsrf=ALeKk00Y_HiCfbkb552rylE71SwBNN-Vvg:1619211727600&source=lnms&tbm=isch&sa=X&ved=2ahUKEwilu9veoZXwAhWKaRUIHVbNBU4Q_AUoAXoECAIQAw&biw=1366&bih=595"], ["created_at", "2021-04-23 21:23:58.775739"], ["updated_at", "2021-04-23 21:23:58.775739"]]
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  [1m[35m (226.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  Rendering links/create.js.erb
+  Rendered links/_link.html.erb (Duration: 0.2ms | Allocations: 19)
+  Rendered links/create.js.erb (Duration: 0.9ms | Allocations: 105)
+Completed 200 OK in 243ms (Views: 2.2ms | ActiveRecord: 227.7ms | Allocations: 7021)
+
+
+Started POST "/links" for 127.0.0.1 at 2021-04-23 23:24:00 +0200
+Processing by LinksController#create as JS
+  Parameters: {"authenticity_token"=>"lGE1SUu98CjC7Ih5yC5/OoEV9raEesCbS24+Oqa3d2wUcFtlQrojmE/pSHrcyaUl4u80NS7wNcrdyPkmDZYFbg==", "link"=>{"original_url"=>"https://www.google.com/search?q=apple&sxsrf=ALeKk00Y_HiCfbkb552rylE71SwBNN-Vvg:1619211727600&source=lnms&tbm=isch&sa=X&ved=2ahUKEwilu9veoZXwAhWKaRUIHVbNBU4Q_AUoAXoECAIQAw&biw=1366&bih=595"}, "commit"=>"Shorten"}
+  [1m[36mLink Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "c3da3ca"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:17:in `block in lookup_code'
+  [1m[36mCACHE Link Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "c3da3ca"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  [1m[36mLink Create (0.5ms)[0m  [1m[32mINSERT INTO "links" ("lookup_code", "original_url", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["lookup_code", "c3da3ca"], ["original_url", "https://www.google.com/search?q=apple&sxsrf=ALeKk00Y_HiCfbkb552rylE71SwBNN-Vvg:1619211727600&source=lnms&tbm=isch&sa=X&ved=2ahUKEwilu9veoZXwAhWKaRUIHVbNBU4Q_AUoAXoECAIQAw&biw=1366&bih=595"], ["created_at", "2021-04-23 21:24:00.796888"], ["updated_at", "2021-04-23 21:24:00.796888"]]
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  [1m[35m (210.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  Rendering links/create.js.erb
+  Rendered links/_link.html.erb (Duration: 0.1ms | Allocations: 19)
+  Rendered links/create.js.erb (Duration: 0.6ms | Allocations: 105)
+Completed 200 OK in 228ms (Views: 1.7ms | ActiveRecord: 211.8ms | Allocations: 7010)
+
+
+Started POST "/links" for 127.0.0.1 at 2021-04-23 23:24:01 +0200
+Processing by LinksController#create as JS
+  Parameters: {"authenticity_token"=>"lGE1SUu98CjC7Ih5yC5/OoEV9raEesCbS24+Oqa3d2wUcFtlQrojmE/pSHrcyaUl4u80NS7wNcrdyPkmDZYFbg==", "link"=>{"original_url"=>"https://www.google.com/search?q=apple&sxsrf=ALeKk00Y_HiCfbkb552rylE71SwBNN-Vvg:1619211727600&source=lnms&tbm=isch&sa=X&ved=2ahUKEwilu9veoZXwAhWKaRUIHVbNBU4Q_AUoAXoECAIQAw&biw=1366&bih=595"}, "commit"=>"Shorten"}
+  [1m[36mLink Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "7623777"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:17:in `block in lookup_code'
+  [1m[36mCACHE Link Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "7623777"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  [1m[36mLink Create (0.3ms)[0m  [1m[32mINSERT INTO "links" ("lookup_code", "original_url", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["lookup_code", "7623777"], ["original_url", "https://www.google.com/search?q=apple&sxsrf=ALeKk00Y_HiCfbkb552rylE71SwBNN-Vvg:1619211727600&source=lnms&tbm=isch&sa=X&ved=2ahUKEwilu9veoZXwAhWKaRUIHVbNBU4Q_AUoAXoECAIQAw&biw=1366&bih=595"], ["created_at", "2021-04-23 21:24:01.162553"], ["updated_at", "2021-04-23 21:24:01.162553"]]
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  [1m[35m (174.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  Rendering links/create.js.erb
+  Rendered links/_link.html.erb (Duration: 0.1ms | Allocations: 19)
+  Rendered links/create.js.erb (Duration: 0.5ms | Allocations: 105)
+Completed 200 OK in 188ms (Views: 1.3ms | ActiveRecord: 175.4ms | Allocations: 7023)
+
+
+Started POST "/links" for 127.0.0.1 at 2021-04-23 23:24:01 +0200
+Processing by LinksController#create as JS
+  Parameters: {"authenticity_token"=>"lGE1SUu98CjC7Ih5yC5/OoEV9raEesCbS24+Oqa3d2wUcFtlQrojmE/pSHrcyaUl4u80NS7wNcrdyPkmDZYFbg==", "link"=>{"original_url"=>"https://www.google.com/search?q=apple&sxsrf=ALeKk00Y_HiCfbkb552rylE71SwBNN-Vvg:1619211727600&source=lnms&tbm=isch&sa=X&ved=2ahUKEwilu9veoZXwAhWKaRUIHVbNBU4Q_AUoAXoECAIQAw&biw=1366&bih=595"}, "commit"=>"Shorten"}
+  [1m[36mLink Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "a7bdf39"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:17:in `block in lookup_code'
+  [1m[36mCACHE Link Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "a7bdf39"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  [1m[36mLink Create (0.4ms)[0m  [1m[32mINSERT INTO "links" ("lookup_code", "original_url", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["lookup_code", "a7bdf39"], ["original_url", "https://www.google.com/search?q=apple&sxsrf=ALeKk00Y_HiCfbkb552rylE71SwBNN-Vvg:1619211727600&source=lnms&tbm=isch&sa=X&ved=2ahUKEwilu9veoZXwAhWKaRUIHVbNBU4Q_AUoAXoECAIQAw&biw=1366&bih=595"], ["created_at", "2021-04-23 21:24:01.498453"], ["updated_at", "2021-04-23 21:24:01.498453"]]
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  [1m[35m (165.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  Rendering links/create.js.erb
+  Rendered links/_link.html.erb (Duration: 0.1ms | Allocations: 19)
+  Rendered links/create.js.erb (Duration: 0.3ms | Allocations: 105)
+Completed 200 OK in 180ms (Views: 0.8ms | ActiveRecord: 166.5ms | Allocations: 6826)
+
+
+Started POST "/links" for 127.0.0.1 at 2021-04-23 23:24:01 +0200
+Processing by LinksController#create as JS
+  Parameters: {"authenticity_token"=>"lGE1SUu98CjC7Ih5yC5/OoEV9raEesCbS24+Oqa3d2wUcFtlQrojmE/pSHrcyaUl4u80NS7wNcrdyPkmDZYFbg==", "link"=>{"original_url"=>"https://www.google.com/search?q=apple&sxsrf=ALeKk00Y_HiCfbkb552rylE71SwBNN-Vvg:1619211727600&source=lnms&tbm=isch&sa=X&ved=2ahUKEwilu9veoZXwAhWKaRUIHVbNBU4Q_AUoAXoECAIQAw&biw=1366&bih=595"}, "commit"=>"Shorten"}
+  [1m[36mLink Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "4cadf88"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:17:in `block in lookup_code'
+  [1m[36mCACHE Link Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "4cadf88"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  [1m[36mLink Create (0.3ms)[0m  [1m[32mINSERT INTO "links" ("lookup_code", "original_url", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["lookup_code", "4cadf88"], ["original_url", "https://www.google.com/search?q=apple&sxsrf=ALeKk00Y_HiCfbkb552rylE71SwBNN-Vvg:1619211727600&source=lnms&tbm=isch&sa=X&ved=2ahUKEwilu9veoZXwAhWKaRUIHVbNBU4Q_AUoAXoECAIQAw&biw=1366&bih=595"], ["created_at", "2021-04-23 21:24:01.776699"], ["updated_at", "2021-04-23 21:24:01.776699"]]
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  [1m[35m (196.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  Rendering links/create.js.erb
+  Rendered links/_link.html.erb (Duration: 0.1ms | Allocations: 19)
+  Rendered links/create.js.erb (Duration: 0.3ms | Allocations: 105)
+Completed 200 OK in 212ms (Views: 0.8ms | ActiveRecord: 197.4ms | Allocations: 7313)
+
+
+Started POST "/links" for 127.0.0.1 at 2021-04-23 23:24:02 +0200
+Processing by LinksController#create as JS
+  Parameters: {"authenticity_token"=>"lGE1SUu98CjC7Ih5yC5/OoEV9raEesCbS24+Oqa3d2wUcFtlQrojmE/pSHrcyaUl4u80NS7wNcrdyPkmDZYFbg==", "link"=>{"original_url"=>"https://www.google.com/search?q=apple&sxsrf=ALeKk00Y_HiCfbkb552rylE71SwBNN-Vvg:1619211727600&source=lnms&tbm=isch&sa=X&ved=2ahUKEwilu9veoZXwAhWKaRUIHVbNBU4Q_AUoAXoECAIQAw&biw=1366&bih=595"}, "commit"=>"Shorten"}
+  [1m[36mLink Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "bdc147a"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:17:in `block in lookup_code'
+  [1m[36mCACHE Link Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "bdc147a"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  [1m[36mLink Create (0.5ms)[0m  [1m[32mINSERT INTO "links" ("lookup_code", "original_url", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["lookup_code", "bdc147a"], ["original_url", "https://www.google.com/search?q=apple&sxsrf=ALeKk00Y_HiCfbkb552rylE71SwBNN-Vvg:1619211727600&source=lnms&tbm=isch&sa=X&ved=2ahUKEwilu9veoZXwAhWKaRUIHVbNBU4Q_AUoAXoECAIQAw&biw=1366&bih=595"], ["created_at", "2021-04-23 21:24:02.168124"], ["updated_at", "2021-04-23 21:24:02.168124"]]
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  [1m[35m (198.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  Rendering links/create.js.erb
+  Rendered links/_link.html.erb (Duration: 0.2ms | Allocations: 19)
+  Rendered links/create.js.erb (Duration: 1.0ms | Allocations: 105)
+Completed 200 OK in 215ms (Views: 2.4ms | ActiveRecord: 199.0ms | Allocations: 7026)
+
+
+Started POST "/links" for 127.0.0.1 at 2021-04-23 23:24:02 +0200
+Processing by LinksController#create as JS
+  Parameters: {"authenticity_token"=>"lGE1SUu98CjC7Ih5yC5/OoEV9raEesCbS24+Oqa3d2wUcFtlQrojmE/pSHrcyaUl4u80NS7wNcrdyPkmDZYFbg==", "link"=>{"original_url"=>"https://www.google.com/search?q=apple&sxsrf=ALeKk00Y_HiCfbkb552rylE71SwBNN-Vvg:1619211727600&source=lnms&tbm=isch&sa=X&ved=2ahUKEwilu9veoZXwAhWKaRUIHVbNBU4Q_AUoAXoECAIQAw&biw=1366&bih=595"}, "commit"=>"Shorten"}
+  [1m[36mLink Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "21a2339"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:17:in `block in lookup_code'
+  [1m[36mCACHE Link Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "21a2339"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  [1m[36mLink Create (0.4ms)[0m  [1m[32mINSERT INTO "links" ("lookup_code", "original_url", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["lookup_code", "21a2339"], ["original_url", "https://www.google.com/search?q=apple&sxsrf=ALeKk00Y_HiCfbkb552rylE71SwBNN-Vvg:1619211727600&source=lnms&tbm=isch&sa=X&ved=2ahUKEwilu9veoZXwAhWKaRUIHVbNBU4Q_AUoAXoECAIQAw&biw=1366&bih=595"], ["created_at", "2021-04-23 21:24:02.494957"], ["updated_at", "2021-04-23 21:24:02.494957"]]
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  [1m[35m (336.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  Rendering links/create.js.erb
+  Rendered links/_link.html.erb (Duration: 0.1ms | Allocations: 19)
+  Rendered links/create.js.erb (Duration: 0.3ms | Allocations: 105)
+Completed 200 OK in 350ms (Views: 0.8ms | ActiveRecord: 337.6ms | Allocations: 6824)
+
+
+Started GET "/21a2339" for 127.0.0.1 at 2021-04-23 23:24:03 +0200
+Processing by LinksController#show as HTML
+  Parameters: {"lookup_code"=>"21a2339"}
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "21a2339"], ["LIMIT", 1]]
+  ↳ app/controllers/links_controller.rb:3:in `show'
+Redirected to https://www.google.com/search?q=apple&sxsrf=ALeKk00Y_HiCfbkb552rylE71SwBNN-Vvg:1619211727600&source=lnms&tbm=isch&sa=X&ved=2ahUKEwilu9veoZXwAhWKaRUIHVbNBU4Q_AUoAXoECAIQAw&biw=1366&bih=595
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms | Allocations: 1076)
+
+
+Started GET "/21a2339" for 127.0.0.1 at 2021-04-23 23:24:03 +0200
+Processing by LinksController#show as HTML
+  Parameters: {"lookup_code"=>"21a2339"}
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "21a2339"], ["LIMIT", 1]]
+  ↳ app/controllers/links_controller.rb:3:in `show'
+Redirected to https://www.google.com/search?q=apple&sxsrf=ALeKk00Y_HiCfbkb552rylE71SwBNN-Vvg:1619211727600&source=lnms&tbm=isch&sa=X&ved=2ahUKEwilu9veoZXwAhWKaRUIHVbNBU4Q_AUoAXoECAIQAw&biw=1366&bih=595
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms | Allocations: 1118)
+
+
+Started POST "/links" for 127.0.0.1 at 2021-04-23 23:25:00 +0200
+Processing by LinksController#create as JS
+  Parameters: {"authenticity_token"=>"lGE1SUu98CjC7Ih5yC5/OoEV9raEesCbS24+Oqa3d2wUcFtlQrojmE/pSHrcyaUl4u80NS7wNcrdyPkmDZYFbg==", "link"=>{"original_url"=>"https://www.google.com/search?q=apple&sxsrf=ALeKk00Y_HiCfbkb552rylE71SwBNN-Vvg:1619211727600&source=lnms&tbm=isch&sa=X&ved=2ahUKEwilu9veoZXwAhWKaRUIHVbNBU4Q_AUoAXoECAIQAw&biw=1366&bih=595"}, "commit"=>"Shorten"}
+  [1m[36mLink Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "99a762c"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:17:in `block in lookup_code'
+  [1m[36mCACHE Link Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "99a762c"], ["LIMIT", 1]]
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  [1m[36mLink Create (0.5ms)[0m  [1m[32mINSERT INTO "links" ("lookup_code", "original_url", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["lookup_code", "99a762c"], ["original_url", "https://www.google.com/search?q=apple&sxsrf=ALeKk00Y_HiCfbkb552rylE71SwBNN-Vvg:1619211727600&source=lnms&tbm=isch&sa=X&ved=2ahUKEwilu9veoZXwAhWKaRUIHVbNBU4Q_AUoAXoECAIQAw&biw=1366&bih=595"], ["created_at", "2021-04-23 21:25:00.291252"], ["updated_at", "2021-04-23 21:25:00.291252"]]
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  [1m[35m (225.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/services/shortener.rb:11:in `generata_short_link'
+  Rendering links/create.js.erb
+  Rendered links/_link.html.erb (Duration: 0.1ms | Allocations: 19)
+  Rendered links/create.js.erb (Duration: 0.6ms | Allocations: 105)
+Completed 200 OK in 240ms (Views: 1.5ms | ActiveRecord: 226.0ms | Allocations: 7010)
+
+
+Started GET "/99a762c" for 127.0.0.1 at 2021-04-23 23:25:04 +0200
+Processing by LinksController#show as HTML
+  Parameters: {"lookup_code"=>"99a762c"}
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "99a762c"], ["LIMIT", 1]]
+  ↳ app/controllers/links_controller.rb:3:in `show'
+Redirected to https://www.google.com/search?q=apple&sxsrf=ALeKk00Y_HiCfbkb552rylE71SwBNN-Vvg:1619211727600&source=lnms&tbm=isch&sa=X&ved=2ahUKEwilu9veoZXwAhWKaRUIHVbNBU4Q_AUoAXoECAIQAw&biw=1366&bih=595
+Completed 302 Found in 4ms (ActiveRecord: 0.2ms | Allocations: 1078)
+
+
+Started GET "/99a762c" for 127.0.0.1 at 2021-04-23 23:25:04 +0200
+Processing by LinksController#show as HTML
+  Parameters: {"lookup_code"=>"99a762c"}
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."lookup_code" = ? LIMIT ?[0m  [["lookup_code", "99a762c"], ["LIMIT", 1]]
+  ↳ app/controllers/links_controller.rb:3:in `show'
+Redirected to https://www.google.com/search?q=apple&sxsrf=ALeKk00Y_HiCfbkb552rylE71SwBNN-Vvg:1619211727600&source=lnms&tbm=isch&sa=X&ved=2ahUKEwilu9veoZXwAhWKaRUIHVbNBU4Q_AUoAXoECAIQAw&biw=1366&bih=595
+Completed 302 Found in 4ms (ActiveRecord: 0.2ms | Allocations: 1126)
+
+
