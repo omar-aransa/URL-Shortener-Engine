@@ -25,7 +25,7 @@ bundle exec rake db:migrate
 ```
 ##### 3. Install Gems
 
-Run the following commands to create and setup the database.
+Run the following commands to install gems.
 
 ```ruby
 bundle install
